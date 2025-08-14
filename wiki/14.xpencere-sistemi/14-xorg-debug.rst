@@ -1,8 +1,8 @@
 **Xorg Hata ayıklama**
 ++++++++++++++++++++++
 
-Hata Ayıklama
--------------
+**Hata Ayıklama**
+-----------------
 
 Eğer Xorg başlatılamıyorsa, hata ayıklamak için aşağıdaki komutu kullanarak log dosyalarını kontrol edebilirsiniz:
 

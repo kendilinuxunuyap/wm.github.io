@@ -1,0 +1,92 @@
+.. _gtk3:
+**gtk3**
+========
+
+GTK3, C dilinde yazılmış, açık kaynaklı bir görsel kullanıcı arayüzü (GUI) toolkit'idir. GNOME masaüstü ortamının temelini oluşturan bu kütüphane, masaüstü uygulamaları geliştirmek için kullanılır.
+
+**Paketi Derleme :**
+--------------------
+
+.. code-block:: bash
+
+	#!/usr/bin/env bash
+	name="gtk3"
+	version="3.24.49"
+	description="Gimp Toolkit"
+	source="https://gitlab.gnome.org/GNOME/gtk/-/archive/${version}/gtk-${version}.tar.gz"
+	depends="cairo,libXi,libXext,libXfixes,libXcursor,libXdamage,librsvg,at-spi2-core,shared-mime-info,gdk-pixbuf,libxkbcommon,libepoxy,colord,libcloudproviders,dconf,cantarell-fonts,libpng,libXcomposite,libXinerama,glib,libXrandr,pango,wayland"
+	builddepend="sassc,libsass"
+	group="gui.libs"
+
+	setup(){
+	CFLAGS="$CFLAGS -O2" \
+	CXXFLAGS="$CXXFLAGS -O2" \
+
+	XDG_DATA_DIRS=/usr/share/ 
+	cp -r ${dizin}/${paket}/files/ /tmp/kly/build/
+	cd $SOURCEDIR
+	patch -Np1 -i ../files/0001-Allow-disabling-legacy-Tracker-search.patch
+
+	meson setup $BUILDDIR --prefix=/usr \
+		--libdir=/usr/lib64/ \
+		-Db_lto=true \
+		-Dman=true \
+		-Dgtk_doc=true \
+		-Dbroadway_backend=true \
+		-Dtests=false \
+		-Dwayland_backend=false
+	  
+	}
+
+	build(){
+	   ninja -C $BUILDDIR
+	   #meson compile -C build
+	}
+
+	package(){
+		DESTDIR=$DESTDIR ninja -C $BUILDDIR install
+
+	install -Dm644 /dev/stdin "$DESTDIR/usr/share/gtk-3.0/settings.ini" <<END
+	[Settings]
+	gtk-icon-theme-name = Adwaita
+	gtk-theme-name = Adwaita
+	gtk-font-name = Cantarell 11
+	END
+
+
+		#DESTDIR="$DESTDIR" meson install -C build
+		#mkdir -p ${DESTDIR}/etc/sysconf.d
+		mkdir -p ${DESTDIR}/etc/profile.d
+		echo "export GTK_OVERLAY_SCROLLING=0" > ${DESTDIR}/etc/profile.d/gtk3.sh
+		echo "export GDK_CORE_DEVICE_EVENTS=1" >> ${DESTDIR}/etc/profile.d/gtk3.sh
+
+	}
+
+	Xsetup(){
+	CFLAGS="$CFLAGS -O2" \
+	CXXFLAGS="$CXXFLAGS -O2" \
+
+	XDG_DATA_DIRS=/usr/share/ 
+
+		cd $SOURCEDIR
+		
+		meson setup $BUILDDIR --prefix=/usr \
+			--libdir=/usr/lib64/ \
+			-Db_lto=true \
+			-Dinstalled_tests=false \
+			-Dman=false \
+			-Dtests=false \
+			-Dgtk_doc=true \
+			-Dcloudproviders=true \
+			-Dbroadway_backend=true \
+			-Dcolord=yes \
+			-Dintrospection=true \
+			-Dtracker3=true 
+		  
+	}
+
+
+ 
+.. raw:: pdf
+
+   PageBreak

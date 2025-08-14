@@ -1,0 +1,43 @@
+.. _p11-kit:
+**p11-kit**
+===========
+
+p11-kit, PKCS#11 tabanlı kriptografik modülleri (özellikle donanım güvenlik modülleri ve akıllı kartlar gibi) yönetmek için kullanılan bir kütüphanedir. PKCS#11, kripto işlemciler veya akıllı kartlar gibi güvenli donanımları yazılımlarına bağlamaya yarayan bir API'dir. p11-kit, bu modülleri daha kolay kullanabilmek ve yönetebilmek için bir araç seti sunar.
+
+**Paketi Derleme :**
+--------------------
+
+.. code-block:: bash
+
+	#!/usr/bin/env bash
+	name="p11-kit"
+	version="0.25.5"
+	url="https://github.com/p11-glue/p11-kit"
+	description="Library for loading and sharing PKCS#11 modules"
+	source="https://github.com/p11-glue/p11-kit/releases/download/${version}/p11-kit-${version}.tar.xz"
+	depends="libtasn1,elfutils,libffi"
+	group="app.crypt"
+
+	setup(){
+		cd $SOURCEDIR
+		autoreconf -fvi
+		./configure --prefix=/usr \
+		    --libdir=/usr/lib64 \
+		    --with-libffi \
+			--without-systemd \
+			--with-trust-paths=/etc/ssl/certs/ca-certificates.crt
+	}
+
+	build(){
+		make
+	}
+
+	package(){
+	   make install DESTDIR=$DESTDIR
+	}
+
+
+ 
+.. raw:: pdf
+
+   PageBreak

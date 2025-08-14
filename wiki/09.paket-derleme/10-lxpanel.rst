@@ -1,0 +1,50 @@
+.. _lxpanel:
+**lxpanel**
+===========
+
+Görev çubuğu ve panel bileşeni. Menü, sistem tepsisi ve uygulama başlatıcıları gibi öğeleri yönetir.
+
+
+**Paketi Derleme :**
+--------------------
+
+.. code-block:: bash
+
+	#!/usr/bin/env bash
+	name="lxpanel"
+	version="0.10.1"
+	description="Lightweight X11 desktop panel for LXDE"
+	source="https://downloads.sourceforge.net/lxde/lxpanel-$version.tar.xz"
+	depends="libwnck3,wireless-tools,curl,alsa-lib,libwnck,"
+	builddepend="intltool,docbook-xml,docbook-xsl,wireless_tools"
+	group="lxde.base"
+
+
+	setup(){
+		cd $SOURCEDIR
+		# Disable pager plugin as it breaks panel layout with GTK+ 3
+		# https://sourceforge.net/p/lxde/bugs/773/
+		sed -i "/pager.c/d" plugins/Makefile.am
+		sed -i "/STATIC_PAGER/d" src/private.h
+		sed -i "s/libwnck-3.0//" configure.ac
+		sed -i "s/background=1/background=0/" data/default/panels/panel.in
+		
+		autoreconf -fvi
+		./configure --prefix=/usr \
+		    --libdir=/usr/lib64/ \
+		    --enable-gtk3 \
+		    --disable-silent-rules \
+		    --with-plugins=all,-cpufreq
+	}
+
+	build(){
+		make
+	}
+
+	package(){
+		make install DESTDIR=$DESTDIR
+	}
+
+.. raw:: pdf
+
+   PageBreak

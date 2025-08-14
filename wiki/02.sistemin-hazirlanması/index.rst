@@ -1,6 +1,6 @@
 .. _sistemhazirlanmasi:
-**Temel Sistemin Hazırlanması**
-===============================
+**X Pencere Sistemin Hazırlanması**
+===================================
 .. toctree::
 	:glob:
 

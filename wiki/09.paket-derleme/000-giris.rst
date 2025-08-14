@@ -1,232 +1,5 @@
-**Pencere Yöneticisi Nedir?**
-=============================
-
-Bir ``pencere yöneticisi`` (window manager), bir masaüstü sisteminde **kullanıcı ve uygulama pencereleri arasındaki etkileşimi yöneten** temel yazılımlardır. Kimi bağımsız çalışırken, kimileri tam masaüstü ortamlarının bir parçasıdır. Sistem kaynakları, kullanıcı deneyimi ve özelleştirme gereksinimlerine göre farklı türleri tercih edilebilir.
-
-Temel Görevleri
----------------
-
-1. **Pencere Oluşturma ve Kontrolü**
-   - Uygulama pencerelerini oluşturur, kapatır, yeniden boyutlandırır ve taşır.
-   - Pencerelerin hangi sırada ve hangi pencerenin önde olduğunu belirler (odak yönetimi).
-
-2. **Çerçeve ve Dekorasyon Sağlama**
-   - Pencerelere başlık çubuğu, kenarlık, simge durumuna küçültme, büyütme ve kapatma gibi kontroller ekler.
-   - Bazı yöneticiler tema desteği ile görsel özelleştirme sunar.
-
-3. **Düzenleme (Layout) Yönetimi**
-   - Pencerelerin nasıl yerleşeceğini belirler:
-     - **Stacking (Yığınlama):** Pencereler üst üste gelir (örnek: Openbox, XFWM).
-     - **Tiling (Döşeme):** Pencereler ekranı böler, üst üste gelmez (örnek: i3, bspwm).
-     - **Dynamic:** Hem stacking hem tiling yöntemlerini karıştırabilir (örnek: awesomewm).
-
-4. **Fare ve Klavye Etkileşimi**
-   - Pencereleri sürükleme, yeniden boyutlandırma gibi işlemleri fareyle yapmaya olanak tanır.
-   - Kısayol tuşları ile pencere geçişi, kapatma, taşıma gibi işlemleri sağlar.
-
-5. **Masaüstü Ortamı Entegrasyonu (isteğe bağlı)**
-   - Bazı pencere yöneticileri bağımsız çalışırken (örneğin Fluxbox),
-     bazıları masaüstü ortamlarının bir parçasıdır (örneğin GNOME → Mutter, KDE → KWin).
-
-.. list-table:: Popüler Pencere Yöneticileri
-   :header-rows: 1
-   :widths: 15 15 40
-
-   * - Adı
-     - Türü
-     - Açıklama
-   * - Openbox
-     - Stacking
-     - Hafif ve özelleştirilebilir
-   * - i3
-     - Tiling
-     - Klavye odaklı, minimal
-   * - KWin
-     - Stacking + efekt
-     - KDE Plasma bileşeni
-   * - Mutter
-     - GNOME bileşeni
-     - Modern kompozit WM
-   * - XFWM4
-     - XFCE bileşeni
-     - Hafif ve geleneksel
-   * - Fluxbox
-     - Stacking
-     - Minimalist, bağımsız
-
-
-Kaynaklar
----------
-
-- ArchWiki – Window Manager: https://wiki.archlinux.org/title/Window_manager
-- Debian Wiki – WindowManagers: https://wiki.debian.org/WindowManager
-- Gentoo Wiki – Window Managers: https://wiki.gentoo.org/wiki/Window_managers
-- https://en.wikipedia.org/wiki/Window_manager
-
-.. raw:: pdf
-
-   PageBreak
-
-**Linux Masaüstü Ortamları ve Pencere Yöneticileri**
-====================================================
-
-Bu belgede, yaygın olarak kullanılan bazı Linux masaüstü ortamları ve pencere yöneticileri tanıtılmaktadır.
-
-***Openbox**
-------------
-
-``Openbox``, hafif ve son derece özelleştirilebilir bir *pencere yöneticisidir*. Kendi başına bir masaüstü ortamı değildir, ancak diğer bileşenlerle birlikte kullanılarak işlevsel bir masaüstü ortamı haline getirilebilir.
-
-- Hafif yapısı ile düşük sistem kaynaklarında bile çalışır.
-- Menü ve kısayol tuşları tamamen kullanıcı tarafından yapılandırılabilir.
-- LXDE gibi hafif masaüstü ortamlarının bir parçası olarak da kullanılır.
-
-**Lumia**
----------
-
-``Lumia``, geleneksel masaüstü düzenine sahip olmayı amaçlayan minimalist ve modern bir *masaüstü ortamıdır*. LXQt çatallanması değildir ancak benzer bir hafifliği hedefler.
-
-- Daha az bilinen bir projedir.
-- GTK veya Qt yerine bağımsız araçlarla geliştirilmiş olabilir.
-- Hedefi hafiflik ve basitliktir.
-
-(Not: Lumia ismi bazı kaynaklarda farklı anlamlarda kullanılabilir. Eğer belirli bir proje veya bağlantıdan söz ediliyorsa, detayları güncellenmelidir.)
-
-**LXDE (Lightweight X11 Desktop Environment)**
-----------------------------------------------
-
-``LXDE``, düşük donanım kaynaklarına sahip sistemler için tasarlanmış hafif bir masaüstü ortamıdır.
-
-- Ana pencere yöneticisi: ``Openbox``
-- Hızlı ve düşük bellek kullanımı
-- GTK2 üzerine inşa edilmiştir
-- Geliştiricileri, daha modern bir yapı olan ``LXQt`` projesine yönelmiştir.
-
-**XFCE**
---------
-
-``XFCE``, hafifliği ve kullanıcı dostu arayüzüyle bilinen bir masaüstü ortamıdır.
-
-- GTK tabanlıdır (GTK3)
-- Panel, dosya yöneticisi (Thunar), ayarlar ve eklenti sistemi gibi bileşenlere sahiptir.
-- Hem hafif hem de modern bir masaüstü deneyimi sunar.
-
-**KDE Plasma**
---------------
-
-``KDE``, tam özellikli ve görsel olarak zengin bir masaüstü ortamıdır. Günümüzde ``KDE Plasma`` olarak anılır.
-
-- Qt kütüphanesi kullanılarak geliştirilmiştir.
-- Geniş özelleştirme seçenekleri ve güçlü yerleşik uygulamalar (Dolphin, Konsole, KWin)
-- Sistem kaynaklarını daha fazla kullanır, ancak son sürümler büyük ölçüde optimize edilmiştir.
-
-**Cinnamon**
-------------
-
-``Cinnamon``, geleneksel masaüstü deneyimini korumayı hedefleyen modern bir ortamdır. ``Linux Mint`` tarafından geliştirilmiştir.
-
-- GNOME 3'ün bir çatallanmasıdır, ancak klasik masaüstü düzenine sahiptir.
-- GTK üzerine inşa edilmiştir.
-- Windows benzeri menü ve panel yapısı sunar.
-
-**GNOME**
----------
-
-``GNOME``, modern ve basit bir masaüstü ortamıdır. Özellikle dokunmatik destekli ve geniş ekran cihazlar için optimize edilmiştir.
-
-- GTK+ tabanlıdır.
-- Minimalist tasarımıyla dikkat çeker (örneğin varsayılan olarak masaüstü simgeleri yoktur).
-- Özellikle Ubuntu’nun varsayılan masaüstüdür.
-
-Karşılaştırma Özeti
--------------------
-
-.. list-table:: Popüler Linux Masaüstü Ortamları Karşılaştırması
-   :header-rows: 1
-   :widths: 15 15 15 15 10 10 10 10
-
-   * - Ortam
-     - Teknoloji
-     - Hafiflik
-     - Özellik
-     - Panel
-     - Menü
-     - Tema
-     - Uygulama
-   * - Openbox
-     - WM (X11)
-     - Çok Hafif
-     - Az
-     - Hayır
-     - Evet
-     - Var
-     - Yok
-   * - Lumia
-     - ?
-     - Çok Hafif
-     - Az
-     - ?
-     - ?
-     - Var
-     - Az
-   * - LXDE
-     - GTK2
-     - Hafif
-     - Orta
-     - Evet
-     - Evet
-     - Var
-     - Orta
-   * - XFCE
-     - GTK3
-     - Orta
-     - Orta
-     - Evet
-     - Evet
-     - Var
-     - Orta
-   * - KDE Plasma
-     - Qt
-     - Ağır
-     - Geniş
-     - Evet
-     - Evet
-     - Çok
-     - Geniş
-   * - Cinnamon
-     - GTK3
-     - Orta-Ağır
-     - Geniş
-     - Evet
-     - Evet
-     - Çok
-     - Geniş
-   * - GNOME
-     - GTK4
-     - Ağır
-     - Geniş
-     - Hayır
-     - Hayır
-     - Az
-     - Geniş
-
-Kaynaklar
----------
-
-- https://wiki.archlinux.org/title/Desktop_environment
-- https://wiki.debian.org/DesktopEnvironment
-- https://www.gnome.org/
-- https://www.kde.org/
-- https://www.linuxmint.com/
-
-.. raw:: pdf
-
-   PageBreak
-
-
-
-
 .. _giris:
+
 **Ön Hazırlık**
 ---------------
 
@@ -243,136 +16,112 @@ Paket derleme işlemi öncesi aşağıdaki konuları bilmemiz gerekmektedir. Bun
 
 Burada liste halinde verilen konu başlıkları bu dokümanın **Yardımcı Konular** bölümünde anlatılmaktadır. 
 
-Bundan sonraki adımlarda kendi dağıtımımızın **xorg ve x11** pencere sistemini derleyerek **Temel Sistem** üzerinde çalıştıracağız!
+Bundan sonraki adımlarda kendi dağıtımımızın **LXDE masaüstü ortmaını** derleyerek **X Pencere Sistemi** üzerinde çalıştıracağız!
 
 
-GNU Araçlarıyla **xorg ve x11** derleme işlemini **kly Paket Sistemi** kullanılarak derleyeceğiz. Derleme işlemini **kly -c** komutuyla yapacağız. Derlenen paketleri **scp** ve **sftp** kullanarak **Temel Sistem** üzerine kopyalayacağız. **kly -i** komutumuzla
-kopyaladığımız paketi **Temel Sistem** üzerine kuracağız. Oluşturduğumuz paketleri istersek github'a yükleyip. github üzerinden kururabiliriz.
+GNU Araçlarıyla **LXDE Masaüstü Ortamının** derleme işlemini **kly Paket Sistemi** kullanılarak derleyeceğiz. Derleme işlemini **kly -c** komutuyla yapacağız. Derlenen paketleri **scp** ve **sftp** kullanarak **Temel Sistem** üzerine kopyalayacağız. **kly -pi** komutumuzla kopyaladığımız paketi **X Pencere Sistemi** üzerine kuracağız. Oluşturduğumuz paketleri istersek github'a yükleyip. github üzerinden kururabiliriz.
 
 .. raw:: pdf
 
    PageBreak
 
 
-**xorg ve x11'in Çalışması için Gerekli Paketler**
------------------------------------------------
+**LXDE Masaüstü Ortamı için Gerekli Paketler**
+----------------------------------------------
 
 .. list-table::
    :widths: 33 33 33
 
    * - 0- :ref:`giris`
-     - 25- :ref:`libX11`
-     - 50- :ref:`libinput`
-   * - 1- :ref:`xorg-server`
-     - 26- :ref:`libICE`
-     - 51- :ref:`mtdev`
-   * - 2- :ref:`pixman`
-     - 27- :ref:`libXrender`
-     - 52- :ref:`libevdev`
-   * - 3- :ref:`libpciaccess`
-     - 28- :ref:`libxcb`
-     - 53- :ref:`libwacom`
-   * - 4- :ref:`libXau`
-     - 29- :ref:`libSM`
-     - 54- :ref:`libgudev`
-   * - 5- :ref:`libXdmcp`
-     - 30- :ref:`xf86-input-libinput`
-     - 55- :ref:`libffi`
-   * - 6- :ref:`libXfont2`
-     - 31- :ref:`xf86-input-vmmouse`
-     - 56- :ref:`xinit`
-   * - 7- :ref:`libxshmfence`
-     - 32- :ref:`xf86-video-amdgpu`
-     - 57- :ref:`xcalc`
-   * - 8- :ref:`libdrm`
-     - 33- :ref:`xf86-video-ast`
-     - 58- :ref:`libXi`
-   * - 9-  :ref:`libxcvt`
-     - 34- :ref:`xf86-video-ati`
-     - 59- :ref:`openbox`
-   * - 10- :ref:`libfontenc`
-     - 35- :ref:`xf86-video-dummy`
-     - 60- :ref:`libXcursor`
-   * - 11- :ref:`freetype`
-     - 36- :ref:`xf86-video-fbdev`
-     - 61- :ref:`libXfixes`
-   * - 12- :ref:`libpng`
-     - 37- :ref:`xf86-video-intel`
-     - 62- :ref:`pango`
-   * - 13- :ref:`harfbuzz`
-     - 38- :ref:`xf86-video-mga`
-     - 63- :ref:`libXrandr`
-   * - 14- :ref:`glib`
-     - 39- :ref:`xf86-video-nouveau`
-     - 64- :ref:`fribidi`
-   * - 15- :ref:`xterm`
-     - 40- :ref:`xf86-video-r128`
-     - 65- :ref:`xcb-util`
-   * - 16- :ref:`libXft`
-     - 41- :ref:`xf86-video-siliconmotion`
-     - 66- :ref:`libthai`
-   * - 17- :ref:`fontconfig`
-     - 42- :ref:`xf86-video-vboxvideo`
-     - 67- :ref:`libdatrie`
-   * - 18- :ref:`dejavu`
-     - 43- :ref:`xf86-video-vesa`
-     - 68- 
-   * - 19- :ref:`libXext`
-     - 44- :ref:`xf86-video-vmware`
-     - 69- 
-   * - 20- :ref:`libXaw`
-     - 45- :ref:`xkbcomp`
-     - 70- 
-   * - 21- :ref:`libXmu`
-     - 46- :ref:`libxkbfile`
-     - 71- 
-   * - 22- :ref:`libXinerama`
-     - 47- :ref:`libglvnd`
-     - 72- 
-   * - 23- :ref:`libXpm`
-     - 48- :ref:`startup-notification`
-     - 73-    
-   * - 24- :ref:`libXt`
-     - 49- :ref:`xkeyboard-config`
-     - 74-
-
-1.  lxmenu-data
-2.  lxde-common
-3.  lxappearance
-4.  lxinput
-5.  lxrandr
-6.  lxsession
-7.  lxpanel
-8.  lxtask
-9.  lxterminal
-10. pcmanfm
-11. lxlauncher
-12. lxhotkey
-13. lxde-base (meta)
-
-Ek Notlar
-
-    libfm ve menu-cache gibi alt bağımlılıkları da pcmanfm, lxpanel gibi bileşenlerden önce kurulmalıdır.
-    
-Kaynaklar
----------
-
-- https://wiki.lxde.org/en/Main_Page
-- https://github.com/lxde
-- https://wiki.archlinux.org/title/LXDE
-
+     - 27- :ref:`libXcomposite`
+     - 54- :ref:`shared-mime-info`
+   * - 1- :ref:`libfm`
+     - 28- :ref:`libXdamage`
+     - 55- :ref:`lz4`
+   * - 2- :ref:`menu-cache`
+     - 29- :ref:`libXfont`
+     - 56- :ref:`gnutls`
+   * - 3- :ref:`libfm-extra`
+     - 30- :ref:`libxkbcommon`
+     - 57- :ref:`lcms2`
+   * - 4- :ref:`lxmenu-data`
+     - 31- :ref:`libxkbui`
+     - 58- :ref:`cups`
+   * - 5- :ref:`lxde-common`
+     - 32- :ref:`libxklavier`
+     - 59- :ref:`gdbm`
+   * - 6- :ref:`lxappearance`
+     - 33- :ref:`libXpresent`
+     - 60- :ref:`mpdecimal`
+   * - 7- :ref:`lxinput`
+     - 34- :ref:`libXres`
+     - 61- :ref:`libgusb`
+   * - 8- :ref:`lxrandr`
+     - 35- :ref:`libxss`
+     - 62- :ref:`libisl`
+   * - 9-  :ref:`lxsession`
+     - 36- :ref:`libXtst`
+     - 63- :ref:`libmpc`
+   * - 10- :ref:`lxpanel`
+     - 37- :ref:`libXv`
+     - 64- :ref:`duktape`
+   * - 11- :ref:`lxtask`
+     - 38- :ref:`libXvMC`
+     - 65- :ref:`atkmm`
+   * - 12- :ref:`lxterminal`
+     - 39- :ref:`libXxf86dga`
+     - 66- :ref:`at-spi2-core`
+   * - 13- :ref:`pcmanfm`
+     - 40- :ref:`libXxf86vm`
+     - 67- :ref:`libtiff`
+   * - 14- :ref:`lxlauncher`
+     - 41- :ref:`tslib`
+     - 68- :ref:`wayland`
+   * - 15- :ref:`lxhotkey`
+     - 42- :ref:`vte3`
+     - 69- :ref:`libepoxy`
+   * - 16- :ref:`lxde-icon-theme`
+     - 43- :ref:`xapp`
+     - 70- :ref:`gobject-introspection`
+   * - 17- :ref:`libjpeg-turbo`
+     - 44- :ref:`xcb-util-cursor`
+     - 71- :ref:`p11-kit`
+   * - 18- :ref:`cairo`
+     - 45- :ref:`xcb-util-errors`
+     - 72- :ref:`nettle`
+   * - 19- :ref:`gdk-pixbuf`
+     - 46- :ref:`xcb-util-image`
+     - 73- :ref:`desktop-file-utils` 
+   * - 20- :ref:`gtksourceview4`
+     - 47- :ref:`xcb-util-keysyms`
+     - 74- :ref:`libidn2`
+   * - 21- :ref:`hsakmt`
+     - 48- :ref:`xcb-util-renderutil`
+     - 75- :ref:`hicolor-icon-theme`
+   * - 22- :ref:`libFS`
+     - 49- :ref:`xcb-util-wm`
+     - 76- :ref:`polkit`
+   * - 23- :ref:`libnotify`
+     - 50- :ref:`xtrans`
+     - 77- :ref:`libjpeg62`
+   * - 24- :ref:`libvdpau`
+     - 51- :ref:`libkeybinder3`
+     - 78- :ref:`gpicview`
+   * - 25- :ref:`libwnck3`
+     - 52- :ref:`libexif`
+     - 79- :ref:`libdmx`
+   * - 26- :ref:`libXaw3d`
+     - 53- :ref:`gtk3`
+     - 80- 
 
 
 **Bağımlılık Zinciri**
 ----------------------
 
-Linux paketinin sorunsuz çalışabilmesi için bağımlı olduğu tüm paketlerin önceden derlenmiş olması gerekir. 
-**x11**'in en temel paketleri **xorg-server, mesa, llvm, cairo** paketleridir.  Tüm paketleri derlesek bile **xorg-server, mesa, llvm, cairo** paketleri düzgün ve uyumlu versiyonları olmadığı zaman x penceremiz açılmayacaktır. Buradaki tüm paketler ve bağımlılıkları derlendikten sonra **Xorg:0** şeklinde x pencere sistemimiz çalışacaktır.
+**LXDE** paketleri **gtk3** ile derlenecek. Bunun için **libfm** paketinin **gtk3** ile derlenmeli ve sonra mevcut sistemimize kurmalıyız. Sistemimize kurulduktan sonra **LXDE** paketlerini **gtk3** ile  derlenmeli. Önemli detaylardan biriside **libfm**  ve menu-cache gibi alt bağımlılıkları da pcmanfm, lxpanel gibi bileşenlerden önce kurulmalıdır.
 
-**Derleme Öncesi Hazırlık!**
-----------------------------
 
-Paket derleme işlemine başlamadan önce, aşağıdaki temel araçları sisteminize kurmalısınız.
+**Derleme Öncesi Hazırlık:** Paket derleme işlemine başlamadan önce, aşağıdaki temel araçları sisteminize kurmalısınız.
 
 .. code-block:: bash
 

@@ -1,9 +1,8 @@
-Bir önceki kitabımızda Temel Linux sistemini oluşturmayı ve iso halinde kurulumu anlatmıştık.
-Şimdi ise bu temel sistemi kurarak bu sistem üzerine **xorg** derleyerek **x11** pencere sisteminin
-nasıl çalışacağı analatılacaktır. 
+Bir önceki kitabımızda **X Pencere Sistemini** oluşturmayı ve iso halinde kurulumu anlatmıştık.
+Şimdi ise bu **X Pencere Sistemini** kurarak bu sistem üzerine **LXDE** araçları ve kütüphanelerini derleyerek **LXDE** masaüstü ortamının nasıl çalışacağı analatılacaktır. **X Pencere Sistemi** https://github.com/kendilinuxunuyap/kly-x11-distro/releases/download/current/kly-x11-distro.iso adresinde bulunmaktadır. İso indirip kurulum yapabilirsiniz.
 
-**Temel Sistem Kurulumu**
--------------------------
+**X Pencere Sistemi Kurulumu**
+------------------------------
 
 Sistemin kurulumu için resimlerde görünen sıraya göre seçimler yapmalıyız.
 
@@ -43,13 +42,36 @@ menüden değişiklik yapabilirsiniz. Değişiklik yapmadan sadece kurulum diski
 
 Sistem kurulumu gerçekleştiğinde  sistem resimde görüldüğü gibi açılmalıdır.
 
-.. image:: /_static/images/kly-acilis1.png
+.. image:: /_static/images/iso-40.png
   :width: 600
 
-Sisteme **root** kullanıcısı olarak giriş yapıldığı görülmektedir.
+Sisteme **user1** (parola=1) kullanıcısı olarak giriş yapıldığı görülmektedir.
 
-.. image:: /_static/images/kly-acilis2.png
+.. image:: /_static/images/x110.png
   :width: 600
+  
+**xinit** çalışınca **X Pencere Sistemine** geçiş yapılacak.
+
+.. raw:: pdf
+
+   PageBreak
+   
+**xinit** çalışınca **X Pencere Sistemi** aşağıdaki gibi açılacaktır.
+
+.. image:: /_static/images/x111.png
+  :width: 600
+  
+**X Pencere Sistemi** çalıştırılmış ve pencere yönetimini ve masaüstü ortamı için **openbox** çalıştırılıyor.
+
+.. image:: /_static/images/x112.png
+  :width: 600
+
+**xcalc** uygulamasının çalıştırılması aşağıda gösterilmiştir.
+
+.. image:: /_static/images/x113.png
+  :width: 600
+
+**X Pencere Sistemi** sistemi görüldüğü üzere çalışmaktadır. Artık **LXDE Masaüstü Ortamı** paketlerini ve bağımlılıklarını **kly Paket Sistemini** kullanarak derlenecek ve **X Pencere Sistemi** üzerine kurularak masaüstü ortamımızı çalışır hale getireceğiz.
 
 .. raw:: pdf
 

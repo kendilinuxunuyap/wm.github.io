@@ -1,0 +1,41 @@
+.. _libexif:
+**libexif**
+===========
+
+JPEG ve TIFF formatındaki fotoğrafların EXIF (Exchangeable Image File Format) meta verilerini okumak ve yazmak için kullanılan açık kaynaklı bir kütüphanedir.
+
+**Paketi Derleme :**
+--------------------
+
+.. code-block:: bash
+
+	#!/usr/bin/env bash
+	name="libexif"
+	version="0.6.25"
+	description="Library to parse an EXIF file and read the data from those tags"
+	source="https://github.com/libexif/libexif/archive/refs/tags/v${version}.tar.gz"
+	depends=""
+	group="media.libs"
+
+
+	setup(){
+		cd $SOURCEDIR
+		autoreconf -fvi
+		./configure --prefix=/usr \
+		    --libdir=/usr/lib64/
+	}
+
+	build(){
+		make
+	}
+
+	package(){
+		make DESTDIR="$DESTDIR" install
+	}
+
+
+
+ 
+.. raw:: pdf
+
+   PageBreak
