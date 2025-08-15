@@ -30,7 +30,6 @@ Menü tanımları ve veri dosyalarını içerir. Diğer bileşenlerin menü bilg
 	}
 
 	build(){
-		#sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 		make
 	}
 
@@ -38,6 +37,8 @@ Menü tanımları ve veri dosyalarını içerir. Diğer bileşenlerin menü bilg
 		make install DESTDIR=$DESTDIR
 	}
 
+
+**Not:** Burada verilen derleme talimatı(script) **kly Paket Sistemi**'ni kullanarak paketi derler ve oluştur. Oluşan paket(**.kly uzantılı dosya**)  **kly Paket Sistemi** kullanılarak siteme yüklenebilir. **kly Paket Sistemiyle Paket Yapma** konusunu okumak için `tıklayınız. <#klypaketyap>`_
 
 .. raw:: pdf
 

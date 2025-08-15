@@ -80,17 +80,6 @@ Bu belgede, yaygın olarak kullanılan bazı Linux masaüstü ortamları ve penc
 - Menü ve kısayol tuşları tamamen kullanıcı tarafından yapılandırılabilir.
 - LXDE gibi hafif masaüstü ortamlarının bir parçası olarak da kullanılır.
 
-**Lumia**
----------
-
-``Lumia``, geleneksel masaüstü düzenine sahip olmayı amaçlayan minimalist ve modern bir *masaüstü ortamıdır*. LXQt çatallanması değildir ancak benzer bir hafifliği hedefler.
-
-- Daha az bilinen bir projedir.
-- GTK veya Qt yerine bağımsız araçlarla geliştirilmiş olabilir.
-- Hedefi hafiflik ve basitliktir.
-
-(Not: Lumia ismi bazı kaynaklarda farklı anlamlarda kullanılabilir. Eğer belirli bir proje veya bağlantıdan söz ediliyorsa, detayları güncellenmelidir.)
-
 **LXDE (Lightweight X11 Desktop Environment)**
 ----------------------------------------------
 
@@ -160,14 +149,6 @@ Karşılaştırma Özeti
      - Evet
      - Var
      - Yok
-   * - Lumia
-     - ?
-     - Çok Hafif
-     - Az
-     - ?
-     - ?
-     - Var
-     - Az
    * - LXDE
      - GTK2
      - Hafif

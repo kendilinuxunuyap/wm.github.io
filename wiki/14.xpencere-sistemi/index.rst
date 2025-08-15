@@ -1,6 +1,6 @@
 .. _xpenceresistemi:
-X Pencere Sistemi
-=================
+**Lxde Masaüstü Ortamı Çalıştırma**
+===================================
 .. toctree::
 	:glob:
 

@@ -76,25 +76,25 @@ GNU Araçlarıyla **LXDE Masaüstü Ortamının** derleme işlemini **kly Paket 
      - 67- :ref:`libtiff`
    * - 14- :ref:`lxlauncher`
      - 41- :ref:`tslib`
-     - 68- :ref:`wayland`
+     - 68- :ref:`libepoxy`
    * - 15- :ref:`lxhotkey`
      - 42- :ref:`vte3`
-     - 69- :ref:`libepoxy`
+     - 69- :ref:`gobject-introspection`
    * - 16- :ref:`lxde-icon-theme`
      - 43- :ref:`xapp`
-     - 70- :ref:`gobject-introspection`
+     - 70- :ref:`p11-kit`
    * - 17- :ref:`libjpeg-turbo`
      - 44- :ref:`xcb-util-cursor`
-     - 71- :ref:`p11-kit`
+     - 71- :ref:`nettle`
    * - 18- :ref:`cairo`
      - 45- :ref:`xcb-util-errors`
-     - 72- :ref:`nettle`
+     - 72- :ref:`desktop-file-utils`
    * - 19- :ref:`gdk-pixbuf`
      - 46- :ref:`xcb-util-image`
-     - 73- :ref:`desktop-file-utils` 
+     - 73- :ref:`libidn2` 
    * - 20- :ref:`gtksourceview4`
      - 47- :ref:`xcb-util-keysyms`
-     - 74- :ref:`libidn2`
+     - 74- :ref:`locale-tr`
    * - 21- :ref:`hsakmt`
      - 48- :ref:`xcb-util-renderutil`
      - 75- :ref:`hicolor-icon-theme`

@@ -39,6 +39,9 @@ JPEG görüntü kodek kütüphanesidir ve orijinal libjpeg kütüphanesinin hız
     ln -s ../usr/lib64/libjpeg.so.8 libjpeg.so.8.2.2
     }
 
+**Not:** Burada verilen derleme talimatı(script) **kly Paket Sistemi**'ni kullanarak paketi derler ve oluştur. Oluşan paket(**.kly uzantılı dosya**)  **kly Paket Sistemi** kullanılarak siteme yüklenebilir. **kly Paket Sistemiyle Paket Yapma** konusunu okumak için `tıklayınız. <#klypaketyap>`_
+
+
 .. raw:: pdf
 
    PageBreak

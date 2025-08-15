@@ -33,7 +33,9 @@ hicolor-icon-theme, Linux ve Unix tabanlı sistemlerde, masaüstü ortamları ve
 	}
 
 
- 
+**Not:** Burada verilen derleme talimatı(script) **kly Paket Sistemi**'ni kullanarak paketi derler ve oluştur. Oluşan paket(**.kly uzantılı dosya**)  **kly Paket Sistemi** kullanılarak siteme yüklenebilir. **kly Paket Sistemiyle Paket Yapma** konusunu okumak için `tıklayınız. <#klypaketyap>`_
+
+
 .. raw:: pdf
 
    PageBreak

@@ -123,7 +123,7 @@ Aşağıdaki scriptle oluşturulmuş iso https://github.com/kendilinuxunuyap/kly
 	chroot $rootfs /bin/kly -ri $paket; 
 	done
 
-	for paket in atkmm at-spi2-core libtiff wayland libepoxy gobject-introspection hicolor-icon-theme p11-kit nettle \
+	for paket in atkmm at-spi2-core libtiff libepoxy gobject-introspection hicolor-icon-theme p11-kit nettle \
 	desktop-file-utils libidn2
 	do
 	chroot $rootfs /bin/kly -ri $paket; 

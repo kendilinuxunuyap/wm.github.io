@@ -54,7 +54,11 @@ Polkit, Linux ve diğer Unix tabanlı sistemlerde, yönetici yetkisi gerektiren 
 		mkdir -p $DESTDIR/var/empty
 	}
 
- 
+Ek dosyaları indirmek için `tıklayınız. <https://kendilinuxunuyap.github.io/_static/files/polkit/files.tar>`_
+
+**Not:** Burada verilen derleme talimatı(script) **kly Paket Sistemi**'ni kullanarak paketi derler ve oluştur. Oluşan paket(**.kly uzantılı dosya**)  **kly Paket Sistemi** kullanılarak siteme yüklenebilir. **kly Paket Sistemiyle Paket Yapma** konusunu okumak için `tıklayınız. <#klypaketyap>`_
+
+
 .. raw:: pdf
 
    PageBreak
