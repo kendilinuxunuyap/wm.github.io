@@ -3,7 +3,7 @@
 ===========
 
 
-Ekran çözünürlüğü ve monitör yapılandırması için grafiksel arayüz sağlar. `xrandr` aracı üzerine kuruludur.
+Ekran çözünürlüğü ve monitör yapılandırması için  kullanılan kütüphanedir.
 
 **Paketi Derleme :**
 --------------------

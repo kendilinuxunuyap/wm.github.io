@@ -2,7 +2,7 @@
 **p11-kit**
 ===========
 
-p11-kit, PKCS#11 tabanlı kriptografik modülleri (özellikle donanım güvenlik modülleri ve akıllı kartlar gibi) yönetmek için kullanılan bir kütüphanedir. PKCS#11, kripto işlemciler veya akıllı kartlar gibi güvenli donanımları yazılımlarına bağlamaya yarayan bir API'dir. p11-kit, bu modülleri daha kolay kullanabilmek ve yönetebilmek için bir araç seti sunar.
+PKCS#11 modülleri için kullanılan bir kütüphanedir.
 
 **Paketi Derleme :**
 --------------------

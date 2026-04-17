@@ -2,7 +2,7 @@
 **xapp**
 ========
 
-xapp, Linux Mint tarafından geliştirilen ve GTK tabanlı uygulamalarda ortak işlevleri kolaylaştırmak için kullanılan bir yardımcı kütüphanedir.
+GTK tabanlı yardımcı kütüphanedir.
 
 **Paketi Derleme :**
 --------------------

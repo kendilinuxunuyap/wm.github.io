@@ -2,7 +2,7 @@
 **libwnck3**
 ============
 
-GNOME masaüstü ortamı için kullanılan bir kütüphanedir. Uygulamaların açık pencereleri, çalışma alanlarını ve masaüstü görevlerini yönetmesini sağlar Pencere listeleme, değiştirme, simge durumuna küçültme gibi işlevler sunar. Hafif ve GTK+ tabanlı uygulamalarda sıkça kullanılır.
+GNOME masaüstü ortamı için gerekli kütüphanedir.
 
 **Paketi Derleme :**
 --------------------

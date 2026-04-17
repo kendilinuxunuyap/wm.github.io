@@ -2,7 +2,7 @@
 **libXv**
 =========
 
-Video görüntüsünü donanım hızlandırmalı olarak X11 pencerelerine hızlıca çizmek için kullanılır. Video oynatıcılar veya medya uygulamalarının, video karelerini CPU yerine GPU ile doğrudan X11 penceresine aktarmasını sağlar. Böylece daha az CPU kullanımı, daha akıcı video oynatma ve daha düşük gecikme elde edilir.
+X11 pencere yönetimi için kullanılır.
 
 **Paketi Derleme :**
 --------------------

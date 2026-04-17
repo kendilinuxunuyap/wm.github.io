@@ -2,7 +2,7 @@
 **libnotify**
 =============
 
-Masaüstü bildirimlerini göstermek için kullanılan bir kütüphanedir. GNOME ve diğer masaüstü ortamlarında uygulamaların kullanıcıya geçici, pop-up tarzı bildirimler göndermesini sağlar. `Freedesktop.org'un bildirim şartnamesine <https://specifications.freedesktop.org/notification-spec/1.3/>`_ dayanır ve hafif, kullanımı kolay bir API sunar. Genellikle GTK+ uygulamalarıyla entegre çalışır.
+Bildirimlerini göstermek için kullanılan bir kütüphanedir. 
 
 **Paketi Derleme :**
 --------------------

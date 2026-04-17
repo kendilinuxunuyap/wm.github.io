@@ -2,15 +2,7 @@
 **libxkbcommon**
 ================
 
-Klavye tuşlarının hangi karaktere veya işlevlere karşılık geldiğini belirler. xkb (X Keyboard Extension) sistemini kullanarak klavye haritalarını işler. Klavye düzenlerinin yorumlanmasını ve yönetilmesini sağlar (örn. QWERTY, Dvorak, Türkçe Q, Türkçe F). Uygulamaların hangi tuşa hangi karakterin karşılık geldiğini anlamasına yardımcı olur.
-
-Nerelerde Kullanılır:
----------------------
-
-- Wayland tabanlı sistemlerde (örneğin GNOME Shell, KDE Plasma Wayland oturumları)
-- Modern X11 uygulamalarında
-- Toolkit'lerde: GTK, Qt, WLRoots, Weston
-- Terminal emülatörleri ve kompozit pencere yöneticileri
+Klavye için gerekli kütüphane.
 
 **Paketi Derleme :**
 --------------------

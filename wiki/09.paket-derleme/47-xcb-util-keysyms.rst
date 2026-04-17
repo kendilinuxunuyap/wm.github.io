@@ -2,7 +2,7 @@
 **xcb-util-keysyms**
 ====================
 
-XCB (X C Binding) kütüphanesi için geliştirilen bir yardımcı modüldür ve klavye tuş kodları ile tuş sembolleri (keysyms) arasında çeviri yapmayı kolaylaştırır.
+XCB kütüphanesinin bir uzantısıdır.
 
 **Paketi Derleme :**
 --------------------

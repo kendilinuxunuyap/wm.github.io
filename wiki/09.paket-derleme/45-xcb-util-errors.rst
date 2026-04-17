@@ -2,7 +2,7 @@
 **xcb-util-errors**
 ===================
 
-XCB (X C Binding) kütüphanesi için geliştirilen bir yardımcı (utility) kütüphanedir ve X11 hatalarını (error) daha okunabilir şekilde raporlamak için kullanılır.
+XCB kütüphanesinin bir uzantısıdır.
 
 **Paketi Derleme :**
 --------------------

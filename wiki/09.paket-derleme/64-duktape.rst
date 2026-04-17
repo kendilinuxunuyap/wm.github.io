@@ -2,7 +2,7 @@
 **duktape**
 ===========
 
-Duktape, C dilinde yazılmış ve gömülü sistemler için optimize edilmiş bir JavaScript motorudur. Hafif, taşınabilir ve kolayca entegre edilebilen bir JavaScript çalışma zamanı sağlar. Genellikle, JavaScript'i düşük seviyeli uygulamalara eklemek isteyen geliştiriciler tarafından kullanılır.
+Gömülü sistemler için JavaScript motorudur.
 
 **Paketi Derleme :**
 --------------------

@@ -2,7 +2,7 @@
 **libgusb**
 ===========
 
-libgusb, USB cihazlarıyla etkileşim kurmak için kullanılan bir C kütüphanesidir. GUSB (GNOME USB) olarak da bilinir ve özellikle GNOME masaüstü ortamı ile entegre çalışmak için geliştirilmiştir. USB cihazlarını yönetmek ve onlarla iletişim kurmak için düşük seviyeli API'ler sağlar.
+USB cihazlarla etkileşim için kullanılan bir C kütüphanesidir.
 
 **Paketi Derleme :**
 --------------------

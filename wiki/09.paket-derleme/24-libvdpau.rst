@@ -2,7 +2,7 @@
 **libvdpau**
 ============
 
-NVIDIA'nın VDPAU (Video Decode and Presentation API for Unix) arayüzünü destekleyen bir kütüphanedir. Video oynatma ve kod çözme işlemlerini GPU üzerinden hızlandırmak için kullanılır. Linux sistemlerinde medya oynatıcılar ve uygulamalar tarafından donanım tabanlı video işleme için tercih edilir. Hafif ve açık kaynaklıdır, özellikle NVIDIA GPU'larla uyumludur.
+NVIDIA'nın VDPAU arayüzünü için kütüphanedir.
 
 **Paketi Derleme :**
 --------------------

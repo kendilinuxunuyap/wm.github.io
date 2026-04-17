@@ -2,7 +2,7 @@
 **libXtst**
 ===========
 
-Klavye ve fare girdilerini simüle etmek için kullanılır. Programların veya test otomasyonlarının, gerçek kullanıcı girişi olmadan fare hareketi, tıklama veya tuş vuruşu gibi eylemleri taklit etmesini sağlar. Ekran kayıt, otomasyon, uzaktan kumanda yazılımları tarafından yaygın kullanılır.
+Klavye ve fare simüle etmek için kullanılan kütüphane. 
 
 **Paketi Derleme :**
 --------------------

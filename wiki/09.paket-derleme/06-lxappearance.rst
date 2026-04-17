@@ -2,7 +2,7 @@
 **lxappearance**
 ================
 
-GTK temalarını ve simge setlerini yönetmek için kullanılan tema yapılandırma aracıdır.
+GTK temalarını yapılandırma aracıdır.
 
 **Paketi Derleme :**
 --------------------

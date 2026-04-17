@@ -2,14 +2,7 @@
 **libXdamage**
 ==============
 
-Bir pencerenin hangi kısımlarının değiştiğini takip etmek kullanılır. Yani, bir pencere üzerinde sadece değişen (güncellenen) alanları bildirir. Bu sayede:
-
-- Ekran kaydı (screen recording),
-- Uzaktan masaüstü paylaşımı (VNC vs.),
-- Compositing window manager'lar,
-- GPU optimizasyonları,
-
-gibi uygulamalarda sadece değişen pikselleri işleyerek performans kazancı sağlar.
+Pencerenin değişimini takip etmek kullanılır.
 
 **Paketi Derleme :**
 --------------------

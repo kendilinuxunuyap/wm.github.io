@@ -2,7 +2,7 @@
 **libtiff**
 ===========
 
-libtiff, TIFF (Tagged Image File Format) dosyalarını işlemek için kullanılan açık kaynaklı bir kütüphanedir. TIFF, genellikle yüksek kaliteli görüntülerin saklanmasında kullanılan bir dosya formatıdır ve genellikle dijital fotoğrafçılık, tarama ve grafik tasarım gibi alanlarda yaygın olarak kullanılır
+ TIFF dosyalarını işlemek için kullanılan kütüphanedir.
 
 **Paketi Derleme :**
 --------------------

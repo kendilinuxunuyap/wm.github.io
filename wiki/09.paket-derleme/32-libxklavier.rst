@@ -2,11 +2,8 @@
 **libxklavier**
 ===============
 
-X11 sistemlerinde çalışan uygulamaların, sistemdeki klavye düzenlerini (keyboard layouts) ve XKB (X Keyboard Extension) yapılandırmalarını okumasına ve değiştirmesine imkan tanıyan bir kütüphanedir.
+Klavye düzenlerini yapılandırması için kullanılan bir kütüphanedir.
 
-- Klavye düzenlerini (örneğin: Türkçe Q, ABD, Dvorak) listelemek, okumak, değiştirmek için bir API sunar.
-- XKB altyapısını kullanır (X Keyboard Extension).
-- GNOME ve diğer masaüstü ortamlarında klavye düzeni değiştirici araçlar tarafından kullanılır (örneğin: gnome-control-center, gsd-keyboard, lxde keyboard switcher).
 
 
 

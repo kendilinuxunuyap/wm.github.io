@@ -2,9 +2,7 @@
 **libXres**
 ===========
 
-X sunucusundaki kaynak (resource) kullanımını izlemek için kullanılır.
-
-Özellikle her X11 istemcisinin, ne kadar grafik kaynağı kullanıyor, kaç pencere kaç grafik nesnesi oluşturuyor, hangi istemci ne kadar kaynak tüketiyor öğrenmeyi sağlar.
+Xorg kaynak kullanımını izlemek için kullanılır.
 
 **Paketi Derleme :**
 --------------------

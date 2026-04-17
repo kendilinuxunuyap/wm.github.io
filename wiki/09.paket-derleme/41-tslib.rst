@@ -2,7 +2,7 @@
 **tslib**
 =========
 
-tslib paketi, özellikle TypeScript projelerinde kullanılan bir yardımcı (utility) kütüphanedir. TypeScript derleyicisinin (tsc) ürettiği JavaScript kodlarında kullanılan bazı yardımcı fonksiyonları içerir.
+Yardımcı kütüphanedir.
 
 **Paketi Derleme :**
 --------------------

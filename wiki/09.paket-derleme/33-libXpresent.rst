@@ -2,13 +2,7 @@
 **libXpresent**
 ===============
 
-X Present Extension'ın istemci tarafı API’sini sağlar. Bu eklenti, daha düzgün, yırtılmasız (tearing-free) grafik güncellemeleri için ekran sunumlarını (presentation) kontrol etmeye yarar.
-
-Uygulamaların (özellikle oyunlar, video oynatıcılar, pencere yöneticileri) tam ekran veya pencere içi çizimlerini ekranla senkronize bir şekilde sunmalarını sağlar.
-
-Bu, klasik X11 sistemlerinde sık görülen ekran yırtılması (tearing) sorununu azaltmaya yardımcı olur.
-
-VSync benzeri işlevler için altyapı sağlar.
+X11 sistemlerinde “Present” (sunum) uzantısını kullanan kütüphanedir.
 
 **Paketi Derleme :**
 --------------------

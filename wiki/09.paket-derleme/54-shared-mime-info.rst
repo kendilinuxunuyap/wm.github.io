@@ -2,7 +2,7 @@
 **shared-mime-info**
 ====================
 
-Linux ve Unix sistemlerinde MIME türlerini tanımlamak için kullanılan bir veritabanıdır. MIME (Multipurpose Internet Mail Extensions), internetteki çeşitli dosya türlerini tanımlamak için kullanılan bir standarttır.
+Dosya türlerini tanımlamak için kullanılan bir standarttır.
 
 **Paketi Derleme :**
 --------------------

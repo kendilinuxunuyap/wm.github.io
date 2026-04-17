@@ -2,7 +2,7 @@
 **libXvMC**
 ===========
 
-Video oynatma sırasında video kod çözme işlemlerini donanım hızlandırmalı olarak yapmayı mümkün kılar. Bu, özellikle MPEG video kodeklerinde CPU yükünü azaltmak ve akıcı video oynatımı sağlamak için kullanılır. Yani, video oynatıcıların sadece görüntüyü göstermekle kalmayıp, kod çözme sürecinde GPU desteği almasını sağlar.
+Video kütüphanesi.
 
 **Paketi Derleme :**
 --------------------

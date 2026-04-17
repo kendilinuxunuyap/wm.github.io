@@ -2,7 +2,7 @@
 **mpdecimal**
 =============
 
-MPDecimal, çok hassas sayısal hesaplamalar yapmak için kullanılan, yüksek hassasiyetli aritmetik sağlayan bir kütüphanedir. Özellikle ondalık sayı işlemlerine odaklanarak, kayıpları minimize eder ve kullanıcıya gelişmiş hassasiyet sunar.
+MPDecimal, çok hassas sayısal hesaplamalar yapmak için kullanılan bir kütüphanedir.
 
 **Paketi Derleme :**
 --------------------

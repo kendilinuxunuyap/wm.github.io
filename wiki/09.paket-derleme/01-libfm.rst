@@ -2,7 +2,7 @@
 **libfm**
 ===============
 
-Menü tanımları ve veri dosyalarını içerir. Diğer bileşenlerin menü bilgilerini kullanabilmesi için öncelikle derlenmelidir.
+Lxde için menü tanımları ve veri dosyalarını içerir. İlk derlenemesi greken pakettir.
 
 
 **Paketi Derleme :**

@@ -2,7 +2,7 @@
 **lcms2**
 =========
 
-lcms2 (Little CMS 2), görüntü işleme ve renk yönetimi için kullanılan açık kaynaklı bir kütüphanedir. Görüntülerin renk profilini yönetmek, dönüştürmek ve renk doğruluğunu sağlamak için kullanılır.
+Görüntü işleme ve renk yönetimi için kullanılan bir kütüphanedir.
 
 **Paketi Derleme :**
 --------------------

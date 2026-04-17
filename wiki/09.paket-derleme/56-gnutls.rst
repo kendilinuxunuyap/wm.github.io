@@ -2,7 +2,7 @@
 **gnutls**
 ==========
 
-GnuTLS, SSL/TLS (Secure Sockets Layer / Transport Layer Security) protokollerini ve kripto işlemleri uygulamak için kullanılan açık kaynaklı bir kütüphanedir. Güvenli internet iletişimini sağlamak için yaygın olarak kullanılır.
+Kripto işlemleri uygulamak için kullanılan bir kütüphanedir. 
 
 **Paketi Derleme :**
 --------------------

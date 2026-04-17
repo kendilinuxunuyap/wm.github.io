@@ -2,7 +2,7 @@
 **libXcomposite**
 =================
 
-X11 sisteminde pencere kompozisyonunu desteklemek için kullanılan bir yazılım kütüphanesidir. Pencerelerin içeriklerini ayrı ayrı bellek tamponlarında tutarak, bu pencerelerin birleşiminin yapılmasını sağlar. Şeffaflık, gölgeler, geçiş efektleri gibi gelişmiş görüntü özelliklerinin sağlanmasını mümkün kılar.
+Pencere düzeni için gerekli kütüphanedir.
 
 **Paketi Derleme :**
 --------------------

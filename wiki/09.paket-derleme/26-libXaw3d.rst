@@ -2,7 +2,7 @@
 **libXaw3d**
 ============
 
-X Window System (X11) için geliştirilmiş bir grafik kullanıcı arayüzü (GUI) kitaplığı olan X Athena Widgets (Xaw) kütüphanesinin 3 boyutlu (3D) görünümlü bir türevidir.
+Xaw için 3D kütüphanesidir.
 
 **Paketi Derleme :**
 --------------------

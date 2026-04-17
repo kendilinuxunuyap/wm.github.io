@@ -2,7 +2,7 @@
 **libmpc**
 ==========
 
-libmpc, Multiple Precision Complex (Çok Hassas Karmaşık Sayılar) kütüphanesidir. Bu kütüphane, yüksek doğruluklu karmaşık sayılarla çalışmayı sağlayan bir matematiksel araçtır. Özellikle karmaşık sayılar üzerinde yapılan hesaplamaların çok hassas ve yüksek doğruluk gerektirdiği durumlarda kullanılır.
+Sayı işleme kütüphanesi.
 
 **Paketi Derleme :**
 --------------------

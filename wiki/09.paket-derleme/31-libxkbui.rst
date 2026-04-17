@@ -2,7 +2,7 @@
 **libxkbui**
 ============
 
-X Keyboard Extension (XKB) kullanıcı arayüzü bileşenlerini sağlayan bir kütüphanedir.X11 sistemlerinde klavye düzeni ve davranışlarını kontrol eden bir sistemdir. **libxkbui**, bu sistemin bir parçası olan grafik kullanıcısı arayüzü öğelerini içerir. Özellikle XKB yapılandırma araçlarının GUI bileşenlerini sağlar (örneğin: xkbcomp, xkbutils, xkbselect, vs.).
+Klavye  için gerekli bir kütüphanedir.
 
 **Paketi Derleme :**
 --------------------

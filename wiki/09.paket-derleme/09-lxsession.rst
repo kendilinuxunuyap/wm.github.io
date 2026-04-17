@@ -2,7 +2,7 @@
 **lxsession**
 =============
 
-LXDE oturum yöneticisi. Masaüstü oturumu başlatma ve yönetme işlevlerini üstlenir.
+LXDE oturum yöneticisi.
 
 
 **Paketi Derleme :**

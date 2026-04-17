@@ -2,7 +2,7 @@
 **libexif**
 ===========
 
-JPEG ve TIFF formatındaki fotoğrafların EXIF (Exchangeable Image File Format) meta verilerini okumak ve yazmak için kullanılan açık kaynaklı bir kütüphanedir.
+JPEG ve TIFF formatındaki dosyalar için bir kütüphanedir.
 
 **Paketi Derleme :**
 --------------------

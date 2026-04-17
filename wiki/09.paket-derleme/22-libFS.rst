@@ -2,7 +2,7 @@
 **libFS**
 =========
 
-X Window System'de yazı tipi sunucusu (font server) ile istemciler arasındaki iletişimi sağlayan bir kütüphanedir. X11 uygulamalarının uzak veya yerel yazı tipi sunucularından yazı tipi verilerine erişmesini sağlar. Hafif bir yapıya sahip olup, Xorg sistemlerinde yazı tipi yönetimini kolaylaştırır. Genellikle modern sistemlerde doğrudan kullanım yerine X sunucusuyla entegre çalışır.
+X Window System'de yazı tipi kütüphanedir.
 
 **Paketi Derleme :**
 --------------------

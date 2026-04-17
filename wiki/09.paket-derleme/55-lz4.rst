@@ -2,7 +2,7 @@
 **lz4**
 =======
 
-lz4, veriyi hızlı bir şekilde sıkıştırmak ve açmak için kullanılan bir hızlı ve verimli sıkıştırma algoritması ve kütüphanesidir. Özellikle yüksek hız ve düşük gecikme gereksinimleri olan durumlar için uygundur.
+Sıkıştırma algoritması ve kütüphanesidir.
 
 **Paketi Derleme :**
 --------------------

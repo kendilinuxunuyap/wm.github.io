@@ -2,7 +2,7 @@
 **xcb-util-image**
 ==================
 
-XCB (X C Binding) kütüphanesi için geliştirilmiş bir yardımcı modüldür ve X11 üzerinde görüntü (image) işleme işlerini kolaylaştırmak için kullanılır.
+XCB kütüphanesinin bir uzantısıdır.
 
 **Paketi Derleme :**
 --------------------

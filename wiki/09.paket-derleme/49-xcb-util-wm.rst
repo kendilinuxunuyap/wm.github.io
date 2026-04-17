@@ -2,7 +2,7 @@
 **xcb-util-wm**
 ===============
 
-XCB (X C Binding) için geliştirilen bir yardımcı kütüphanedir ve X11 pencere yöneticisi protokolleriyle çalışmayı kolaylaştırır.
+XCB kütüphanesinin bir uzantısıdır.
 
 **Paketi Derleme :**
 --------------------

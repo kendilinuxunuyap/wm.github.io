@@ -2,7 +2,7 @@
 **lxde-common**
 ===============
 
-Ortak konfigürasyon dosyaları, tema ve temel altyapı öğelerini sağlar. LXDE'nin diğer bileşenleri için temel oluşturur.
+LXDE için gerekli temel kütüphanedir.
 
 **Paketi Derleme :**
 --------------------

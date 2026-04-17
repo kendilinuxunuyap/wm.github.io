@@ -2,7 +2,7 @@
 **xcb-util-cursor**
 ===================
 
-xcb-util-cursor, X11 pencere sistemi için kullanılan XCB (X C Binding) kütüphanesinin bir uzantısıdır. Özellikle fare (cursor) simgeleriyle çalışmak için geliştirilmiştir.
+XCB kütüphanesinin bir uzantısıdır.
 
 **Paketi Derleme :**
 --------------------

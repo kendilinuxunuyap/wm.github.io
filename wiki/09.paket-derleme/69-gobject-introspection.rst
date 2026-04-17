@@ -2,7 +2,7 @@
 **gobject-introspection**
 =========================
 
-gobject-introspection, GObject tabanlı kütüphanelerin, çalışma zamanında yansıma (reflection) bilgilerini sağlamasına olanak tanıyan bir mekanizmadır. Bu, C dilinde yazılmış kütüphanelerin, farklı programlama dillerinde kullanılabilmesini sağlayan bir altyapıdır. GObject, GNOME platformu ve GTK+ gibi araçlar için temel bir nesne modelidir. gobject-introspection, bu kütüphanelerin diğer dillerde de kullanılmasını mümkün kılar.
+GObject için temel kütüphane.
 
 **Paketi Derleme :**
 --------------------

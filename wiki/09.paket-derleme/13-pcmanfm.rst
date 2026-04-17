@@ -2,7 +2,7 @@
 **pcmanfm**
 ===========
 
-Dosya yöneticisi. Dosya gezintisi, masaüstü yönetimi ve simge gösterimi işlevlerini yerine getirir.
+Dosya yöneticisi.
 
 **Paketi Derleme :**
 --------------------

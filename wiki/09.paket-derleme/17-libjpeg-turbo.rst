@@ -2,7 +2,7 @@
 **libjpeg-turbo**
 =================
 
-JPEG görüntü kodek kütüphanesidir ve orijinal libjpeg kütüphanesinin hız odaklı bir çatalıdır. x86, x86-64, ARM ve PowerPC sistemlerde temel JPEG sıkıştırma ve açma işlemlerini hızlandırır.
+JPEG görüntü kodek kütüphanesidir.
 
 **Paketi Derleme :**
 --------------------

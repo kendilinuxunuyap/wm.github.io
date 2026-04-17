@@ -2,7 +2,7 @@
 **gdbm**
 ========
 
-GDBM, GNU Database Manager'ın kısaltmasıdır ve verileri anahtar-değer çiftleri (key-value pairs) olarak depolayan bir veritabanı yönetim sistemidir. C dilinde yazılmıştır ve düşük seviyeli, hızlı ve taşınabilir bir veritabanı çözümü sunar.
+Anahtar-değer çifti olarak depolayan bir veritabanı yönetim sistemidir.
 
 **Paketi Derleme :**
 --------------------

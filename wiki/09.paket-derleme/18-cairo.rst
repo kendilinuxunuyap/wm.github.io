@@ -2,7 +2,7 @@
 **cairo**
 =========
 
-2D vektör grafikleri çizimi için kullanılan açık kaynaklı bir kütüphanedir. Çizgiler, şekiller, metinler ve görüntüler gibi grafiksel öğeleri oluşturmak ve işlemek için platformdan bağımsız bir API sunar. Linux, Windows ve macOS gibi farklı platformlarda çalışır ve genellikle GTK+, Firefox gibi uygulamalarda kullanılır. Hafif, esnek ve yüksek kaliteli grafik çıktıları üretir.
+Grafikleri çizimi için kullanılan bir kütüphanedir.
 
 **Paketi Derleme :**
 --------------------

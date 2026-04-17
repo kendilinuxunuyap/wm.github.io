@@ -2,7 +2,7 @@
 **lxlauncher**
 ==============
 
-Netbook tarzı uygulama başlatıcı. Menü verilerine dayanır.
+Netbook tarzı uygulama başlatıcı.
 
 **Paketi Derleme :**
 --------------------

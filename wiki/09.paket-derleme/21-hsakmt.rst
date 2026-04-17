@@ -2,7 +2,7 @@
 **hsakmt**
 ==========
 
-AMD ROCm (Radeon Open Compute) platformunun parçası olan bir kütüphanedir. Kullanıcı modundan AMD HSA (Heterogeneous System Architecture) çekirdek sürücüsüyle (AMDKFD) iletişim kurmak için bir ara katman sağlar. GPU ve CPU arasındaki heterojen bilgi işlem işlemlerini destekler, özellikle Kaveri ve Carrizo APU'lar için optimize edilmiştir. Hafif ve açık kaynaklıdır.
+AMD ROCm içn bir kütüphanedir.
 
 **Paketi Derleme :**
 --------------------

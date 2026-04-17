@@ -2,7 +2,7 @@
 **gtk3**
 ========
 
-GTK3, C dilinde yazılmış, açık kaynaklı bir görsel kullanıcı arayüzü (GUI) toolkit'idir. GNOME masaüstü ortamının temelini oluşturan bu kütüphane, masaüstü uygulamaları geliştirmek için kullanılır.
+GTK3, C dilinde yazılmış, görsel kullanıcı arayüzüdür. GNOME kütüphanesidir, masaüstü uygulamaları geliştirmek için kullanılır.
 
 **Paketi Derleme :**
 --------------------

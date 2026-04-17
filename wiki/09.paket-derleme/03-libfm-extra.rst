@@ -2,7 +2,7 @@
 **libfm-extra**
 ===============
 
-Menü tanımları ve veri dosyalarını içerir. Diğer bileşenlerin menü bilgilerini kullanabilmesi için öncelikle derlenmelidir.
+LXDE için gerekli temel kütüphanedir.
 
 
 **Paketi Derleme :**

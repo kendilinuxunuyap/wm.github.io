@@ -2,7 +2,7 @@
 **libkeybinder3**
 =================
 
-Linux masaüstü ortamlarında global klavye kısayollarını yakalamak ve yönetmek için kullanılan bir kütüphanedir.
+Klavye kısayollarını yönetmek için kullanılan kütüphanedir.
 
 **Paketi Derleme :**
 --------------------

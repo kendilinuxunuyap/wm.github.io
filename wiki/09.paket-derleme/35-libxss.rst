@@ -2,7 +2,7 @@
 **libxss**
 ==========
 
-X11 (X Window System) için geliştirilmiş, ekran koruyucu (screen saver) durumunu izlemeye ve kontrol etmeye yarayan bir kütüphanedir.
+Ekran koruyucusu kütüphanesidir.
 
 **Paketi Derleme :**
 --------------------

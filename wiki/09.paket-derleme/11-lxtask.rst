@@ -2,7 +2,7 @@
 **lxtask**
 ==========
 
-Basit bir görev yöneticisidir. Sistem kaynaklarını ve çalışan işlemleri gösterir.
+Lxde görev yöneticisidir.
 
 **Paketi Derleme :**
 --------------------

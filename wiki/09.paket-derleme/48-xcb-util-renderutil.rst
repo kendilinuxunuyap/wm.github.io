@@ -2,7 +2,7 @@
 **xcb-util-renderutil**
 =======================
 
-xcb-util-renderutil, X11 sisteminde kullanılan bir yardımcı kütüphanedir ve XCB (X C Binding) adı verilen düşük seviyeli, modern bir X protokolü arayüzünün bir parçasıdır. Daha spesifik olarak, xcb-util-renderutil kütüphanesi, X11'in Render Extension (Render uzantısı) ile çalışmayı kolaylaştırmak için bazı yardımcı işlevler sağlar.
+XCB kütüphanesinin bir uzantısıdır.
 
 **Paketi Derleme :**
 --------------------

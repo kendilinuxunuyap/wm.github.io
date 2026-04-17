@@ -2,7 +2,7 @@
 **cups**
 ========
 
-CUPS, Unix ve Unix benzeri işletim sistemlerinde (Linux, macOS, BSD gibi) kullanılan, yazıcıların yönetimi ve baskı işlemlerini yöneten açık kaynaklı bir yazıcı sunucu sistemidir. CUPS, yazıcılar arası iletişimi yönetmek için Internet Printing Protocol (IPP) kullanır ve baskı kuyruklarını, yazıcı yönetimini sağlar.
+Yazıcı yönetimi için kullanılan pakettir.
 
 **Paketi Derleme :**
 --------------------

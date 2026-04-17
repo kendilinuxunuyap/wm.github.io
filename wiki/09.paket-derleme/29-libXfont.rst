@@ -2,7 +2,7 @@
 **libXfont**
 ============
 
-X sunucusunun font (bitmap veya outline tabanlı) dosyalarını yüklemesini, analiz etmesini ve istemcilere sunmasını sağlar.X sunucusu ile istemciler arasındaki yazı tipi işlemlerini destekler, ancak doğrudan uygulamalar tarafından kullanılmaz. Genellikle X sunucusunun içinde veya onunla birlikte çalışan font sunucularında kullanılır.
+Xorg font dosyalarını yönetmesi için grekeli kütüphane.
 
 **Paketi Derleme :**
 --------------------

@@ -2,7 +2,7 @@
 **lxterminal**
 ==============
 
-LXDE için terminal öykünücüsüdür. Terminal erişimi sağlar.
+LXDE için terminal öykünücüsüdür.
 
 **Paketi Derleme :**
 --------------------

@@ -2,7 +2,7 @@
 **libisl**
 ==========
 
-libisl, Integer Set Library'nin kısaltmasıdır ve tam sayı kümeleri üzerinde işlem yapmak için kullanılan bir kütüphanedir. Genellikle doğrusal optimizasyon ve matematiksel modelleme problemleri çözmek için kullanılır.
+Sayısal kümeler üzerinde işlem için kullanılan bir kütüphanedir.
 
 **Paketi Derleme :**
 --------------------

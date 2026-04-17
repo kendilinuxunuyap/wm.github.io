@@ -2,7 +2,7 @@
 **atkmm**
 =========
 
-atkmm, C++ için ATK (Accessibility Toolkit) bağlayıcısıdır. ATK, GNOME ve diğer Linux masaüstü ortamlarında erişilebilirlik (accessibility) desteği sağlamak için kullanılan bir araçtır. atkmm, C++ dilinde yazılmış uygulamaların ATK ile etkileşime girmesini sağlayan bir kütüphanedir.
+ATK, masaüstü ortamlarında erişilebilirlik desteği için kullanılan araçtır. 
 
 **Paketi Derleme :**
 --------------------

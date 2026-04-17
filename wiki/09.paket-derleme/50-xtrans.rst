@@ -2,7 +2,7 @@
 **xtrans**
 ==========
 
-xcb-util-wm, XCB tabanlı pencere yöneticileri ve X11 istemcileri için, ICC ve EWMH gibi pencere yöneticisi protokollerini uygulamayı kolaylaştıran bir yardımcı kütüphanedir.
+Pencere yöneticisi için yardımcı kütüphanedir.
 
 **Paketi Derleme :**
 --------------------

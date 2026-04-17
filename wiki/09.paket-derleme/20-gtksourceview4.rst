@@ -2,7 +2,7 @@
 **gtksourceview4**
 ==================
 
-GTK+ tabanlı uygulamalar için gelişmiş bir metin düzenleme bileşenidir. Kaynak kodu düzenleme, sözdizimi vurgulama, satır numaraları, otomatik girintileme gibi özellikler sunar. Programlama dilleri ve betik dosyaları için özelleştirilmiş düzenleme desteği sağlar. Hafif, esnek ve genellikle GNOME tabanlı editörlerde (ör. gedit) kullanılır.
+GTK+ tabanlı uygulamalar için metin düzenleme paketidir.
 
 **Paketi Derleme :**
 --------------------

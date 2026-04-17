@@ -2,8 +2,7 @@
 **lxpanel**
 ===========
 
-Görev çubuğu ve panel bileşeni. Menü, sistem tepsisi ve uygulama başlatıcıları gibi öğeleri yönetir.
-
+Lxde görev çubuğu ve panel bileşeni.
 
 **Paketi Derleme :**
 --------------------

@@ -2,7 +2,7 @@
 **lxinput**
 ===========
 
-Fare ve klavye ayarlarının yapılandırılması için gerekli bileşendir.
+Giriş aygıtlarını yapılandırma için gerekli bileşendir.
 
 
 **Paketi Derleme :**

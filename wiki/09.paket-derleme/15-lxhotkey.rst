@@ -2,7 +2,7 @@
 **lxhotkey**
 ============
 
-Klavye kısayollarının yönetimi ve atanması için kullanılır.
+Klavye kısayollarının yönetimi için kullanılır.
 
 
 **Paketi Derleme :**

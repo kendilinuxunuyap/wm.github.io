@@ -2,7 +2,7 @@
 **libXxf86dga**
 ===============
 
-Uygulamaların, X sunucusunu atlayarak doğrudan grafik donanımına erişmesini sağlar. Bu sayede özellikle tam ekran uygulamalarda daha hızlı ve düşük gecikmeli grafik çizimi mümkün olur. CPU ve GPU arasında daha hızlı veri aktarımı sağlar.
+Uygulamaların grafik donanımına erişmesini sağlar.
 
 **Paketi Derleme :**
 --------------------

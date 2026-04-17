@@ -2,8 +2,7 @@
 **libXxf86vm**
 ==============
 
-X sunucusuna bağlı olarak çalışan uygulamaların, ekran çözünürlüğü, yenileme hızı, renk derinliği gibi video modlarını değiştirmesini sağlar. Tam ekran uygulamaların (özellikle oyunlar) dinamik olarak ekran modlarını değiştirmesi için kullanılır.  
-Kullanıcı etkileşimi olmadan ekran çözünürlüğünü programlı değiştirebilir.
+Ekran çözünürlüğü, yenileme hızı gibi işlemlerin değiştirmesini sağlar.
 
 **Paketi Derleme :**
 --------------------

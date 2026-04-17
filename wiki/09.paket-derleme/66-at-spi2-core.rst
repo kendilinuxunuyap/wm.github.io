@@ -2,7 +2,8 @@
 **at-spi2-core**
 ================
 
-at-spi2-core, GNOME masaüstü ortamında kullanılan AT-SPI2 (Assistive Technology Service Provider Interface 2) framework'ünün çekirdek bileşenidir. Bu framework, erişilebilirlik (accessibility) araçları ve yazılımları ile masaüstü uygulamaları arasındaki iletişimi sağlar. AT-SPI2, özellikle görme engelli kullanıcılar için ekran okuyucuları ve diğer yardımcı teknolojilerle etkileşimde bulunabilmesini sağlar.
+Erişilebilirlik araçları ve yazılımları arasında iletişimi sağlar.
+
 
 **Paketi Derleme :**
 --------------------

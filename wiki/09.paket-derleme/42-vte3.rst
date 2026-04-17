@@ -2,7 +2,7 @@
 **vte3**
 ========
 
-vte3, GNOME Terminal gibi terminal emülatörlerinde kullanılan bir terminal widget'ıdır. GTK+ tabanlı uygulamalarda terminal öykünmesi sağlamak için kullanılır.
+GTK+ tabanlıdır. Terminal öykünmesi sağlamak için kullanılır.
 
 **Paketi Derleme :**
 --------------------

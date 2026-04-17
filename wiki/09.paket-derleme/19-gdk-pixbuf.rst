@@ -2,7 +2,7 @@
 **gdk-pixbuf**
 ==============
 
-GTK+ kütüphanesinin bir parçası olan açık kaynaklı bir kütüphanedir ve 2D piksel tabanlı görüntü işleme için kullanılır. Görüntüleri yüklemek, kaydetmek, ölçeklendirmek, döndürmek ve manipüle etmek gibi işlemleri gerçekleştirir. PNG, JPEG, GIF gibi popüler görüntü formatlarını destekler.
+GTK+ kütüphanesinin bir parçası olan pakettir.
 
 **Paketi Derleme :**
 --------------------
