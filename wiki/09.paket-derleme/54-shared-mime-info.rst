@@ -1,4 +1,5 @@
 .. _shared-mime-info:
+
 **shared-mime-info**
 ====================
 
@@ -32,7 +33,7 @@ Dosya türlerini tanımlamak için kullanılan bir standarttır.
 		DESTDIR=$DESTDIR ninja -C $BUILDDIR install
 	}
 
-Ek dosyaları indirmek için `tıklayınız. <https://kendilinuxunuyap.github.io/_static/files/shared-mime-info/files.tar>`_
+Ek dosyaları indirmek için `tıklayınız.. <https://kendilinuxunuyap.github.io/_static/files/shared-mime-info/files.tar>`_
 
 **Not:** Burada verilen derleme talimatı(script) **kly Paket Sistemi**'ni kullanarak paketi derler ve oluştur. Oluşan paket(**.kly uzantılı dosya**)  **kly Paket Sistemi** kullanılarak siteme yüklenebilir. **kly Paket Sistemiyle Paket Yapma** konusunu okumak için `tıklayınız. <#klypaketyap>`_
 

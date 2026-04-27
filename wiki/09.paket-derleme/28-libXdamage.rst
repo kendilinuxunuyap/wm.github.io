@@ -1,4 +1,5 @@
 .. _libXdamage:
+
 **libXdamage**
 ==============
 

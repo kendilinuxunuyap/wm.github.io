@@ -1,4 +1,5 @@
 .. _gobject-introspection:
+
 **gobject-introspection**
 =========================
 

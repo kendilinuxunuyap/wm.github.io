@@ -1,11 +1,11 @@
 **pkexec, /etc/shells ve Polkit İlişkisi**
-=========================================
+==========================================
 
 Bu belge, ``pkexec`` komutunun çalışması için gerekli olan ``/etc/shells`` 
 bağlantısını, Polkit ile olan ilişkisini ve doğru yapılandırma adımlarını açıklar.
 
 **1 — Temel İlişki**
--------------------
+--------------------
 
 - **pkexec**, bir komutu yönetici yetkileri ile çalıştırmak için kullanılır.
 - Arka planda **Polkit** (PolicyKit) kullanarak yetkilendirme yapar.

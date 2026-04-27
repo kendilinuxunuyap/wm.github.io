@@ -1,4 +1,5 @@
 .. _gtksourceview4:
+
 **gtksourceview4**
 ==================
 

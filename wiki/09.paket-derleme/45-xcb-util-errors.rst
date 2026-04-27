@@ -1,4 +1,5 @@
 .. _xcb-util-errors:
+
 **xcb-util-errors**
 ===================
 

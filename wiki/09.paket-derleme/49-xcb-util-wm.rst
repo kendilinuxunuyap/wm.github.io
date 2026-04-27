@@ -1,4 +1,5 @@
 .. _xcb-util-wm:
+
 **xcb-util-wm**
 ===============
 

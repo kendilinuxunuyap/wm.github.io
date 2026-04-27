@@ -1,4 +1,5 @@
 .. _libgpg-error:
+
 **libgpg-error**
 ================
 

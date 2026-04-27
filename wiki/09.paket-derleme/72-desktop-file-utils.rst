@@ -1,4 +1,5 @@
 .. _desktop-file-utils:
+
 **desktop-file-utils**
 ======================
 

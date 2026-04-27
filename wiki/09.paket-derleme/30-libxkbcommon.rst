@@ -1,4 +1,5 @@
 .. _libxkbcommon:
+
 **libxkbcommon**
 ================
 

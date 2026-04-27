@@ -1,4 +1,5 @@
 .. _xcb-util-image:
+
 **xcb-util-image**
 ==================
 

@@ -1,4 +1,5 @@
 .. _libXxf86dga:
+
 **libXxf86dga**
 ===============
 

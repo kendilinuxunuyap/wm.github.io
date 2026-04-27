@@ -10,28 +10,36 @@ yapabilmesini sağlamak.
 -----------------------
 
 1) Elogind çalışıyor mu?
-   ::
+
+.. code-block:: bash
+
       rc-status | grep -E 'elogind|dbus'
       rc-service elogind status
 
 2) Polkit aracı (agent) çalışıyor mu?
-   ::
+
+.. code-block:: bash
+
       pgrep -fa lxpolkit || pgrep -fa polkit-gnome-authentication-agent-1
 
 3) Kullanıcı gerçekten *wheel* grubunda mı?
-   ::
+
+.. code-block:: bash
+
       id $USER
 
 
 **Çözüm 1 — *wheel* Grubunu “Yönetici” Olarak Tanımlama**
------------------------------------------------------------------------
+---------------------------------------------------------
 
 Polkit’e *wheel* grubunun “yönetici kimliği (AdminIdentity)” olduğunu söyleyin. 
 Bu, yönetici doğrulaması gerektiren işlemlerde *wheel* üyesinin **kendi parolasıyla** 
 yetki almasını sağlar.
 
 1) Dosyayı oluşturun: ``/etc/polkit-1/rules.d/40-wheel-admin.rules``
-   ::
+
+.. code-block:: bash
+
       /* Mark wheel group as administrators (use own password) */
       polkit.addAdminRule(function(action, subject) {
           if (subject.isInGroup("wheel")) {
@@ -40,7 +48,9 @@ yetki almasını sağlar.
       });
 
 2) Dosya izinleri:
-   ::
+
+.. code-block:: bash
+
       chown root:root /etc/polkit-1/rules.d/40-wheel-admin.rules
       chmod 0644 /etc/polkit-1/rules.d/40-wheel-admin.rules
 
@@ -52,13 +62,15 @@ yetki almasını sağlar.
    PageBreak
    
 **Çözüm 2 — Sadece Güç Eylemlerine *wheel* için “YES” Ver**
-------------------------------------------------------------
+-----------------------------------------------------------
 
 Sistemde “admin” kavramını genişletmek istemiyorsanız, yalnızca poweroff/reboot
 eylemlerine *wheel* için açıkça izin verin.
 
 1) Dosyayı oluşturun: ``/etc/polkit-1/rules.d/49-login1-power-wheel.rules``
-   ::
+
+.. code-block:: bash
+
       /* Allow wheel to poweroff/reboot (elogind login1 actions) */
       polkit.addRule(function(action, subject) {
           if (!subject.isInGroup("wheel"))
@@ -74,7 +86,9 @@ eylemlerine *wheel* için açıkça izin verin.
       });
 
 2) İzinler:
-   ::
+
+.. code-block:: bash
+
       chown root:root /etc/polkit-1/rules.d/49-login1-power-wheel.rules
       chmod 0644 /etc/polkit-1/rules.d/49-login1-power-wheel.rules
 

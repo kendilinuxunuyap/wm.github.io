@@ -1,4 +1,5 @@
 .. _xcb-util-renderutil:
+
 **xcb-util-renderutil**
 =======================
 

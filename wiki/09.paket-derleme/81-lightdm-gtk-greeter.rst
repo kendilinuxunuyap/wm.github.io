@@ -1,4 +1,5 @@
 .. _lightdm-gtk-greeter:
+
 **lightdm-gtk-greeter**
 =======================
 

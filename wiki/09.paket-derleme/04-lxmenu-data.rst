@@ -1,4 +1,5 @@
 .. _lxmenu-data:
+
 **lxmenu-data**
 ===============
 

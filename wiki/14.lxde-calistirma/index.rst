@@ -1,6 +1,8 @@
 .. _xpenceresistemi:
+
 **Lxde Masaüstü Ortamı Çalıştırma**
 ===================================
+
 .. toctree::
 	:glob:
 

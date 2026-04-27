@@ -87,7 +87,7 @@ Açıklama:
    shadow:      files
 
 Açıklama:
-........
+.........
 
 - Kullanıcı ve grup bilgileri `files` (yerel /etc/passwd ve /etc/group) üzerinden çözülür.
 

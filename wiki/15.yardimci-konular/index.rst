@@ -1,6 +1,8 @@
 .. _yardimcikonular:
+
 Yardımcı Konular
 ================
+
 .. toctree::
 	:glob:
 

@@ -1,6 +1,7 @@
 .. _libepoxy:
+
 **libepoxy**
-===========
+============
 
 Grafik kütüphaneleri arası uyumluluk sağlayan bir C kütüphanesidir.
 

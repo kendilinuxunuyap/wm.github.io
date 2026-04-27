@@ -1,4 +1,5 @@
 .. _hicolor-icon-theme:
+
 **hicolor-icon-theme**
 ======================
 

@@ -1,4 +1,5 @@
 .. _lxde-icon-theme:
+
 **lxde-icon-theme**
 ===================
 
