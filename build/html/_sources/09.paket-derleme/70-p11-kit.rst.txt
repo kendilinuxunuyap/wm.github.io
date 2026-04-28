@@ -1,0 +1,47 @@
+.. _p11-kit:
+
+**p11-kit**
+===========
+
+PKCS#11 modülleri için kullanılan bir kütüphanedir.
+
+**Paketi Derleme :**
+--------------------
+
+.. code-block:: bash
+
+	#!/usr/bin/env bash
+	name="p11-kit"
+	version="0.25.5"
+	url="https://github.com/p11-glue/p11-kit"
+	description="Library for loading and sharing PKCS#11 modules"
+	source="https://github.com/p11-glue/p11-kit/releases/download/${version}/p11-kit-${version}.tar.xz"
+	depends="libtasn1,elfutils,libffi"
+	group="app.crypt"
+
+	setup(){
+		cd $SOURCEDIR
+		autoreconf -fvi
+		./configure --prefix=/usr \
+		    --libdir=/usr/lib64 \
+		    --with-libffi \
+			--without-systemd \
+			--with-trust-paths=/etc/ssl/certs/ca-certificates.crt
+	}
+
+	build(){
+		make
+	}
+
+	package(){
+	   make install DESTDIR=$DESTDIR
+	}
+
+
+**Not:** Burada verilen derleme talimatı(script) **kly Paket Sistemi**'ni kullanarak paketi derler ve oluştur. Oluşan paket(**.kly uzantılı dosya**)  **kly Paket Sistemi** kullanılarak siteme yüklenebilir. **kly Paket Sistemiyle Paket Yapma** konusunu okumak için `tıklayınız. <#klypaketyap>`_
+
+
+ 
+.. raw:: pdf
+
+   PageBreak

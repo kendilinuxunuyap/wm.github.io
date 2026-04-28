@@ -1,0 +1,658 @@
+
+<!DOCTYPE html>
+
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>&lt;no title&gt; &#8212; distro Wiki  belgelendirmesi</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="canonical" href="https://kendilinuxunuyap.github.io/index.html" />
+    <link rel="index" title="Dizin" href="genindex.html" />
+    <link rel="search" title="Ara" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="00.kapak/index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="00.kapak/2-yazar.html"><strong>Yazar</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="00.kapak/2-yazar.html#paket-derleme"><strong>Paket Derleme</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="00.kapak/2-yazar.html#iletisim"><strong>İletişim</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="00.kapak/3-onsoz.html">Ön Söz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00.kapak/4-icindekiler.html">İçindekiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.giris/index.html"><strong>Temel Kavramlar</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01.giris/0-wm.html"><strong>Window Manager (Pencere Yöneticisi)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="01.giris/0-wm.html#display-manager-giris-ekrani-oturum-baslatici"><strong>Display Manager (Giriş Ekranı + Oturum Başlatıcı)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="01.giris/0-wm.html#desktop-manager-masaustu-yoneticisi"><strong>Desktop Manager (Masaüstü Yöneticisi)</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="02.sistemin-hazirlanmas%C4%B1/index.html"><strong>X Pencere Sistemin Hazırlanması</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02.sistemin-hazirlanmas%C4%B1/0-kurulum.html"><strong>X Pencere Sistemi Kurulumu</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="02.sistemin-hazirlanmas%C4%B1/0-kurulum.html#sistemin-calismasi"><strong>Sistemin Çalışması</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="02.sistemin-hazirlanmas%C4%B1/2-internet.html"><strong>Sistemin Internet Bağlantısı</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="02.sistemin-hazirlanmas%C4%B1/3-ssh.html"><strong>Sisteme openssh ile Bağlanma</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="02.sistemin-hazirlanmas%C4%B1/4-sftp.html"><strong>Sisteme sftp ile Bağlanma</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="02.sistemin-hazirlanmas%C4%B1/5-scp.html"><strong>Sisteme scp ile Dosya Kopyalama</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="09.paket-derleme/index.html"><strong>GNU Araçlarıyla Pencere Yöneticisi Derleme</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/000-giris.html"><strong>Ön Hazırlık</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/000-giris.html#lxde-masaustu-ortami-icin-gerekli-paketler"><strong>LXDE Masaüstü Ortamı için Gerekli Paketler</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/000-giris.html#bagimlilik-zinciri"><strong>Bağımlılık Zinciri</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/01-libfm.html"><strong>libfm</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/01-libfm.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/02-menu-cache.html"><strong>menu-cache</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/02-menu-cache.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/03-libfm-extra.html"><strong>libfm-extra</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/03-libfm-extra.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/04-lxmenu-data.html"><strong>lxmenu-data</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/04-lxmenu-data.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/05-lxde-common.html"><strong>lxde-common</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/05-lxde-common.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/06-lxappearance.html"><strong>lxappearance</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/06-lxappearance.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/07-lxinput.html"><strong>lxinput</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/07-lxinput.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/08-lxrandr.html"><strong>lxrandr</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/08-lxrandr.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/09-lxsession.html"><strong>lxsession</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/09-lxsession.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/10-lxpanel.html"><strong>lxpanel</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/10-lxpanel.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/11-lxtask.html"><strong>lxtask</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/11-lxtask.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/12-lxterminal.html"><strong>lxterminal</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/12-lxterminal.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/13-pcmanfm.html"><strong>pcmanfm</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/13-pcmanfm.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/14-lxlauncher.html"><strong>lxlauncher</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/14-lxlauncher.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/15-lxhotkey.html"><strong>lxhotkey</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/15-lxhotkey.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/16-lxde-icon-theme.html"><strong>lxde-icon-theme</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/16-lxde-icon-theme.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/17-libjpeg-turbo.html"><strong>libjpeg-turbo</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/17-libjpeg-turbo.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/18-cairo.html"><strong>cairo</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/18-cairo.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/19-gdk-pixbuf.html"><strong>gdk-pixbuf</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/19-gdk-pixbuf.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/20-gtksourceview4.html"><strong>gtksourceview4</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/20-gtksourceview4.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/21-hsakmt.html"><strong>hsakmt</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/21-hsakmt.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/22-libFS.html"><strong>libFS</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/22-libFS.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/23-libnotify.html"><strong>libnotify</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/23-libnotify.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/24-libvdpau.html"><strong>libvdpau</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/24-libvdpau.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/25-libwnck3.html"><strong>libwnck3</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/25-libwnck3.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/26-libXaw3d.html"><strong>libXaw3d</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/26-libXaw3d.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/27-libXcomposite.html"><strong>libXcomposite</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/27-libXcomposite.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/28-libXdamage.html"><strong>libXdamage</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/28-libXdamage.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/29-libXfont.html"><strong>libXfont</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/29-libXfont.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/30-libxkbcommon.html"><strong>libxkbcommon</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/30-libxkbcommon.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/31-libxkbui.html"><strong>libxkbui</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/31-libxkbui.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/32-libxklavier.html"><strong>libxklavier</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/32-libxklavier.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/33-libXpresent.html"><strong>libXpresent</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/33-libXpresent.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/34-libXres.html"><strong>libXres</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/34-libXres.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/35-libxss.html"><strong>libxss</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/35-libxss.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/36-libXtst.html"><strong>libXtst</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/36-libXtst.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/37-libXv.html"><strong>libXv</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/37-libXv.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/38-libXvMC.html"><strong>libXvMC</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/38-libXvMC.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/39-libXxf86dga.html"><strong>libXxf86dga</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/39-libXxf86dga.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/40-libXxf86vm.html"><strong>libXxf86vm</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/40-libXxf86vm.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/41-tslib.html"><strong>tslib</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/41-tslib.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/42-vte3.html"><strong>vte3</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/42-vte3.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/43-xapp.html"><strong>xapp</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/43-xapp.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/44-xcb-util-cursor.html"><strong>xcb-util-cursor</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/44-xcb-util-cursor.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/45-xcb-util-errors.html"><strong>xcb-util-errors</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/45-xcb-util-errors.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/46-xcb-util-image.html"><strong>xcb-util-image</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/46-xcb-util-image.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/47-xcb-util-keysyms.html"><strong>xcb-util-keysyms</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/47-xcb-util-keysyms.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/48-xcb-util-renderutil.html"><strong>xcb-util-renderutil</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/48-xcb-util-renderutil.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/49-xcb-util-wm.html"><strong>xcb-util-wm</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/49-xcb-util-wm.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/50-xtrans.html"><strong>xtrans</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/50-xtrans.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/51-libkeybinder3.html"><strong>libkeybinder3</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/51-libkeybinder3.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/52-libexif.html"><strong>libexif</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/52-libexif.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/53-gtk3.html"><strong>gtk3</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/53-gtk3.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/54-shared-mime-info.html"><strong>shared-mime-info</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/54-shared-mime-info.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/55-lz4.html"><strong>lz4</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/55-lz4.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/56-gnutls.html"><strong>gnutls</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/56-gnutls.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/57-lcms2.html"><strong>lcms2</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/57-lcms2.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/58-cups.html"><strong>cups</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/58-cups.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/59-gdbm.html"><strong>gdbm</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/59-gdbm.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/60-mpdecimal.html"><strong>mpdecimal</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/60-mpdecimal.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/61-libgusb.html"><strong>libgusb</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/61-libgusb.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/62-libisl.html"><strong>libisl</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/62-libisl.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/63-libmpc.html"><strong>libmpc</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/63-libmpc.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/64-duktape.html"><strong>duktape</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/64-duktape.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/65-atkmm.html"><strong>atkmm</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/65-atkmm.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/66-at-spi2-core.html"><strong>at-spi2-core</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/66-at-spi2-core.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/67-libtiff.html"><strong>libtiff</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/67-libtiff.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/68-libepoxy.html"><strong>libepoxy</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/68-libepoxy.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/69-gobject-introspection.html"><strong>gobject-introspection</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/69-gobject-introspection.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/70-p11-kit.html"><strong>p11-kit</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/70-p11-kit.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/71-nettle.html"><strong>nettle</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/71-nettle.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/72-desktop-file-utils.html"><strong>desktop-file-utils</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/72-desktop-file-utils.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/73-libidn2.html"><strong>libidn2</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/73-libidn2.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/74-locale-tr.html"><strong>locale-tr</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/74-locale-tr.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/75-hicolor-icon-theme.html"><strong>hicolor-icon-theme</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/75-hicolor-icon-theme.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/76-polkit.html"><strong>polkit</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/76-polkit.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/77-libjpeg62.html"><strong>libjpeg62</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/77-libjpeg62.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/78-gpicview.html"><strong>gpicview</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/78-gpicview.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/79-libdmx.html"><strong>libdmx</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/79-libdmx.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/80-lightdm.html"><strong>lightdm</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/80-lightdm.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/81-lightdm-gtk-greeter.html"><strong>lightdm-gtk-greeter</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/81-lightdm-gtk-greeter.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/82-libgpg-error.html"><strong>libgpg-error</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/82-libgpg-error.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="09.paket-derleme/83-libgcrypt.html"><strong>libgcrypt</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="09.paket-derleme/83-libgcrypt.html#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="10.iso-hazirlama/index.html"><strong>ISO Hazırlama</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="10.iso-hazirlama/2-kly-iso-yapma.html"><strong>kly Paket Sistemiyle ISO Oluşturma Scripti</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="12.sistemin-calistirma-inceleme/index.html">Oluşan Sistemin Çalıştırılması ve İncelenmesi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="12.sistemin-calistirma-inceleme/1-kurulum.html"><strong>Canlı(live) Sistem Kullanımı</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="12.sistemin-calistirma-inceleme/1-kurulum.html#sistem-kurulumu"><strong>Sistem Kurulumu</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="12.sistemin-calistirma-inceleme/1-kurulum.html#sistemin-calismasi"><strong>Sistemin Çalışması</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="14.lxde-calistirma/index.html"><strong>Lxde Masaüstü Ortamı Çalıştırma</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="14.lxde-calistirma/13-xorg-calistirma.html"><strong>LXDE'yi xinit veya startx'le Çalıştırma</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="14.lxde-calistirma/13-xorg-calistirma.html#openbox-masaustu-ortamini-kullanma"><strong>openbox Masaüstü Ortamını Kullanma</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="14.lxde-calistirma/13-xorg-calistirma.html#lxde-masaustu-ortamini-kullanma"><strong>lxde Masaüstü Ortamını Kullanma</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="14.lxde-calistirma/13-xorg-calistirma.html#lightdm"><strong>Lightdm</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="15.yardimci-konular/index.html">Yardımcı Konular</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="15.yardimci-konular/08-kly-paket-sistemi-kullan%C4%B1m%C4%B1/index.html"><strong>kly Paket Sistemi Kullanımı</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/08-kly-paket-sistemi-kullan%C4%B1m%C4%B1/0-kly.html"><strong>kly Paket Siteminin Debian'a Kurulumu</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/08-kly-paket-sistemi-kullan%C4%B1m%C4%B1/1-paket-yap.html"><strong>kly Paket Sistemiyle Paket Yapma</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/08-kly-paket-sistemi-kullan%C4%B1m%C4%B1/1-paket-yap.html#klybild-dosyalarinda-kullanilan-degiskenler"><strong>klybild dosyalarında Kullanılan Değişkenler</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/08-kly-paket-sistemi-kullan%C4%B1m%C4%B1/2-paket-kur.html"><strong>kly ile Paket Kur</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/08-kly-paket-sistemi-kullan%C4%B1m%C4%B1/3-paket-kaldir.html"><strong>kly ile Paket Kaldir</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/08-kly-paket-sistemi-kullan%C4%B1m%C4%B1/4-paket-github-gonder.html"><strong>kly Paketlerini Githuba Yükleme ve İndexleme</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="15.yardimci-konular/08-kly-paket-sistemi-kullan%C4%B1m%C4%B1/4-paket-github-gonder.html#kly-github-depo-yapma"><strong>kly github Depo Yapma</strong></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="15.yardimci-konular/08-kly-paket-sistemi-kullan%C4%B1m%C4%B1/4-paket-github-gonder.html#github-sitesi-acilir"><strong>github Sitesi Açılır</strong></a></li>
+<li class="toctree-l5"><a class="reference internal" href="15.yardimci-konular/08-kly-paket-sistemi-kullan%C4%B1m%C4%B1/4-paket-github-gonder.html#github-uzerinden-hesaba-giris-yapilir"><strong>github Üzerinden Hesaba Giriş Yapılır</strong></a></li>
+<li class="toctree-l5"><a class="reference internal" href="15.yardimci-konular/08-kly-paket-sistemi-kullan%C4%B1m%C4%B1/4-paket-github-gonder.html#yeni-depo-alani-olusturulur"><strong>Yeni Depo Alanı Oluşturulur</strong></a></li>
+<li class="toctree-l5"><a class="reference internal" href="15.yardimci-konular/08-kly-paket-sistemi-kullan%C4%B1m%C4%B1/4-paket-github-gonder.html#kly-binary-packages-depomuz-yerele-bilgisayara-kopyalanir-clone"><strong>kly-binary-packages Depomuz Yerele(Bilgisayara) Kopyalanır(Clone)</strong></a></li>
+<li class="toctree-l5"><a class="reference internal" href="15.yardimci-konular/08-kly-paket-sistemi-kullan%C4%B1m%C4%B1/4-paket-github-gonder.html#paketimiz-kly-binary-packages-dizinine-kopyalanir"><strong>Paketimiz kly-binary-packages Dizinine Kopyalanır</strong></a></li>
+<li class="toctree-l5"><a class="reference internal" href="15.yardimci-konular/08-kly-paket-sistemi-kullan%C4%B1m%C4%B1/4-paket-github-gonder.html#index-dosyasi-olusturulur"><strong>index Dosyası Oluşturulur</strong></a></li>
+<li class="toctree-l5"><a class="reference internal" href="15.yardimci-konular/08-kly-paket-sistemi-kullan%C4%B1m%C4%B1/4-paket-github-gonder.html#main-yml-dosyasi-olusturulur"><strong>main.yml Dosyası Oluşturulur</strong></a></li>
+<li class="toctree-l5"><a class="reference internal" href="15.yardimci-konular/08-kly-paket-sistemi-kullan%C4%B1m%C4%B1/4-paket-github-gonder.html#github-dosya-olusturma-izni-verin"><strong>github Dosya oluşturma İzni Verin</strong></a></li>
+<li class="toctree-l5"><a class="reference internal" href="15.yardimci-konular/08-kly-paket-sistemi-kullan%C4%B1m%C4%B1/4-paket-github-gonder.html#github-a-kly-binary-packages-dizinini-yukleyelim-uplod-commit"><strong>github'a  kly-binary-packages Dizinini Yükleyelim(Uplod/Commit)</strong></a></li>
+<li class="toctree-l5"><a class="reference internal" href="15.yardimci-konular/08-kly-paket-sistemi-kullan%C4%B1m%C4%B1/4-paket-github-gonder.html#github-kly-binary-packages-depo-kontrolu"><strong>github  kly-binary-packages Depo Kontrolü</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="15.yardimci-konular/08-kly-paket-sistemi-kullan%C4%B1m%C4%B1/4-paket-github-gonder.html#index-lst-icerigi"><strong>index.lst İçeriği</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/08-kly-paket-sistemi-kullan%C4%B1m%C4%B1/5-paket-guncelle.html"><strong>kly ile Paket Listelerini Güncelleme</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="15.yardimci-konular/019-apt.html"><strong>apt Paket Sistemi</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/019-apt.html#yerel-paket-indexini-guncelleme">Yerel Paket İndexini Güncelleme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/019-apt.html#paket-yukleme">Paket Yükleme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/019-apt.html#paket-silme">Paket Silme</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="15.yardimci-konular/100-virtualbox.html"><strong>VirtualBox</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="15.yardimci-konular/102-derleme-t%C3%BCrleri.html"><strong>Kaynak Kod Derleme</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/102-derleme-t%C3%BCrleri.html#paylasimli-derleme-dynamic"><strong>1-Paylaşımlı Derleme(dynamic):</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/102-derleme-t%C3%BCrleri.html#ldconfig"><strong>ldconfig</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/102-derleme-t%C3%BCrleri.html#paylasimsiz-gomulu-static"><strong>2-Paylaşımsız, gömülü(static):</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="15.yardimci-konular/103-0.derleme-ara%C3%A7lar%C4%B1.html"><strong>Derleme Araçları</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="15.yardimci-konular/103-1.make.html"><strong>1-make</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/103-1.make.html#makefile-nedir">Makefile Nedir?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="15.yardimci-konular/103-2.cmake.html"><strong>2-cmake</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="15.yardimci-konular/103-3.meson.html"><strong>3-meson</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="15.yardimci-konular/103-4.python.html"><strong>4-python</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="15.yardimci-konular/109-openrc.html"><strong>OpenRC</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/109-openrc.html#calistirilmasi"><strong>Çalıştırılması</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/109-openrc.html#openrc-kullanimi"><strong>openrc Kullanımı</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/109-openrc.html#servis-dosyasi"><strong>Servis Dosyası</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="15.yardimci-konular/110-qemu.html"><strong>Qemu Kullanımı</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/110-qemu.html#sisteme-kurulum">Sisteme Kurulum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/110-qemu.html#id1">qemu Kullanımı</a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/110-qemu.html#sistem-hizlandirilmasi">Sistem Hızlandırılması</a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/110-qemu.html#boot-menu-acma">Boot Menu Açma</a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/110-qemu.html#uefi-kurulum-icin">Uefi kurulum için:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/110-qemu.html#qemu-host-erisimi">qemu Host Erişimi:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/110-qemu.html#vmlinuz-ve-initrd">vmlinuz ve initrd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/110-qemu.html#qemu-terminal-yonlendirmesi">qemu Terminal Yönlendirmesi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/110-qemu.html#diskteki-sistemin-acilisini-terminale-yonlendirme">Diskteki Sistemin Açılışını Terminale Yönlendirme</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="15.yardimci-konular/139-github.html"><strong>github</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/139-github.html#github-hesabiniza-giris-yapin"><strong>GitHub Hesabınıza Giriş Yapın</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/139-github.html#yeni-depo-olusturma"><strong>Yeni Depo Oluşturma</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/139-github.html#depo-bilgilerini-girin"><strong>Depo Bilgilerini Girin</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/139-github.html#ilk-dosyayi-olusturma"><strong>İlk Dosyayı Oluşturma</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/139-github.html#github-varsayilan-dal-ayari"><strong>github Varsayılan Dal Ayarı:</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/139-github.html#github-komut-kullanimi"><strong>github komut Kullanımı</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="15.yardimci-konular/139-github.html#sik-kullanilan-github-komutlari"><strong>Sık Kullanılan github Komutları</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/139-github.html#depoyu-yerele-indirme-clone"><strong>Depoyu Yerele indirme(Clone)</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/139-github.html#dal-branch"><strong>Dal(Branch):</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/139-github.html#github-token-olusturma-kullanma"><strong>github token Oluşturma Kullanma</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="15.yardimci-konular/140-elogind.html"><strong>elogind Yapılandırması</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/140-elogind.html#gerekli-kullanici-ve-grup-tanimlari"><strong>1. Gerekli Kullanıcı ve Grup Tanımları</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="15.yardimci-konular/140-elogind.html#aciklama">Açıklama:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/140-elogind.html#openrc-hizmet-dosyasi-etc-init-d-elogind"><strong>2. OpenRC Hizmet Dosyası (/etc/init.d/elogind)</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="15.yardimci-konular/140-elogind.html#id1">Açıklama:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/140-elogind.html#baslatma-ve-openrcye-ekleme"><strong>3. Başlatma ve OpenRC’ye Ekleme</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="15.yardimci-konular/140-elogind.html#id2">Açıklama:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/140-elogind.html#pam-passwd-ve-group-ayarlari"><strong>4. PAM, Passwd ve Group Ayarları</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="15.yardimci-konular/140-elogind.html#id3">Açıklama:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/140-elogind.html#openrc-agetty-ayari"><strong>5. OpenRC Agetty Ayarı</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="15.yardimci-konular/140-elogind.html#id4">Açıklama:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/140-elogind.html#diger-oneriler-ve-notlar"><strong>6. Diğer Öneriler ve Notlar</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="15.yardimci-konular/141-dbus.html"><strong>D-Bus Yapılandırması</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/141-dbus.html#adim-1-kullanici-ve-grup-olusturma"><strong>Adım 1: Kullanıcı ve Grup Oluşturma</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/141-dbus.html#adim-2-sistem-uuid-ve-machine-id-ayari"><strong>Adım 2: Sistem UUID ve machine-id Ayarı</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/141-dbus.html#adim-3-dbus-daemon-launch-helper-izin-kontrolu"><strong>Adım 3: dbus-daemon-launch-helper İzin Kontrolü</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/141-dbus.html#adim-4-d-bus-yapilandirma-yenileme"><strong>Adım 4: D-Bus Yapılandırma Yenileme</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/141-dbus.html#adim-5-d-bus-servisini-baslatma-openrc"><strong>Adım 5: D-Bus Servisini Başlatma (OpenRC)</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="15.yardimci-konular/142-polkit.html"><strong>polkit Yetkilendirme</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/142-polkit.html#temel-ayar-kontrolu"><strong>Temel Ayar Kontrolü</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/142-polkit.html#cozum-1-wheel-grubunu-yonetici-olarak-tanimlama"><strong>Çözüm 1 — *wheel* Grubunu “Yönetici” Olarak Tanımlama</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/142-polkit.html#cozum-2-sadece-guc-eylemlerine-wheel-icin-yes-ver"><strong>Çözüm 2 — Sadece Güç Eylemlerine *wheel* için “YES” Ver</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/142-polkit.html#onemli-not"><strong>Önemli Not:</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="15.yardimci-konular/143-pkexec.html"><strong>pkexec, /etc/shells ve Polkit İlişkisi</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/143-pkexec.html#temel-iliski"><strong>1 — Temel İlişki</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/143-pkexec.html#etc-shells-dosyasini-kontrol-etme"><strong>2 — /etc/shells Dosyasını Kontrol Etme</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/143-pkexec.html#polkit-ile-baglanti"><strong>3 — Polkit ile Bağlantı</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/143-pkexec.html#wheel-grubunu-yonetici-olarak-tanimlama"><strong>4 — Wheel Grubunu Yönetici Olarak Tanımlama</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/143-pkexec.html#test"><strong>5 — Test</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/143-pkexec.html#ozet"><strong>6 — Özet</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="15.yardimci-konular/144-glib-compile-schemas-.html"><strong>glib-compile-schemas Kullanımı</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/144-glib-compile-schemas-.html#temel-gorev"><strong>Temel Görev</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/144-glib-compile-schemas-.html#ne-zaman-kullanilir"><strong>Ne Zaman Kullanılır?</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/144-glib-compile-schemas-.html#kullanim-sekli"><strong>Kullanım Şekli</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/144-glib-compile-schemas-.html#dikkat-edilmesi-gerekenler"><strong>Dikkat Edilmesi Gerekenler</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="15.yardimci-konular/145-gdk-pixbuf-query-loaders.html"><strong>gdk-pixbuf-query-loaders Kullanımı</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/145-gdk-pixbuf-query-loaders.html#temel-gorev"><strong>Temel Görev</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/145-gdk-pixbuf-query-loaders.html#ne-zaman-kullanilir"><strong>Ne Zaman Kullanılır?</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/145-gdk-pixbuf-query-loaders.html#kullanim-sekli"><strong>Kullanım Şekli</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/145-gdk-pixbuf-query-loaders.html#dikkat-edilmesi-gerekenler"><strong>Dikkat Edilmesi Gerekenler</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="15.yardimci-konular/150-userdirs.html"><strong>user-dirs</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="15.yardimci-konular/151-sistemdili.html"><strong>Sistem Dili Değiştirme</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/151-sistemdili.html#cevresel-degisken-ayarlama-yontemleri"><strong>Çevresel Değişken Ayarlama Yöntemleri</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="15.yardimci-konular/151-sistemdili.html#yontem"><strong>1. Yöntem</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="15.yardimci-konular/151-sistemdili.html#id1"><strong>2. Yöntem</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="15.yardimci-konular/151-sistemdili.html#id2"><strong>3.Yöntem</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/151-sistemdili.html#profile-dosyasi"><strong>Profile Dosyası</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/151-sistemdili.html#profile"><strong>profile</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="15.yardimci-konular/152-kullaniciekleme.html"><strong>Kullanıcı Ekleme</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/152-kullaniciekleme.html#adduser"><strong>adduser:</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/152-kullaniciekleme.html#useradd"><strong>useradd:</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="15.yardimci-konular/153-cgroup.html"><strong>cgroup</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/153-cgroup.html#cgroup-un-temel-ozellikleri"><strong>Cgroup'un Temel Özellikleri</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="15.yardimci-konular/153-cgroup.html#cgroup-kullanimi"><strong>Cgroup Kullanımı</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="2-kaynak.html"><strong>Kaynaklar</strong></a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="3-contact-sonkapak.html"><strong>Geliştiricilere Mesajımız</strong></a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="4-lisans.html"><strong>Lisans Bilgileri</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="4-lisans.html#iletisim"><strong>İletişim</strong></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="#">
+    <img class="logo" src="_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Gezinti</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="00.kapak/2-yazar.html"><strong>Yazar</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="00.kapak/2-yazar.html#paket-derleme"><strong>Paket Derleme</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="00.kapak/2-yazar.html#iletisim"><strong>İletişim</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="00.kapak/3-onsoz.html">Ön Söz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00.kapak/4-icindekiler.html">İçindekiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.giris/index.html"><strong>Temel Kavramlar</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.sistemin-hazirlanmas%C4%B1/index.html"><strong>X Pencere Sistemin Hazırlanması</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.paket-derleme/index.html"><strong>GNU Araçlarıyla Pencere Yöneticisi Derleme</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.iso-hazirlama/index.html"><strong>ISO Hazırlama</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="12.sistemin-calistirma-inceleme/index.html">Oluşan Sistemin Çalıştırılması ve İncelenmesi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14.lxde-calistirma/index.html"><strong>Lxde Masaüstü Ortamı Çalıştırma</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="15.yardimci-konular/index.html">Yardımcı Konular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2-kaynak.html"><strong>Kaynaklar</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-contact-sonkapak.html"><strong>Geliştiricilere Mesajımız</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-lisans.html"><strong>Lisans Bilgileri</strong></a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;distro 2023.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

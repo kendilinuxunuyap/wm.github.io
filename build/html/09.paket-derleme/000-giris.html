@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Ön Hazırlık &#8212; distro Wiki  belgelendirmesi</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="canonical" href="https://kendilinuxunuyap.github.io/09.paket-derleme/000-giris.html" />
+    <link rel="index" title="Dizin" href="../genindex.html" />
+    <link rel="search" title="Ara" href="../search.html" />
+    <link rel="next" title="libfm" href="01-libfm.html" />
+    <link rel="prev" title="GNU Araçlarıyla Pencere Yöneticisi Derleme" href="index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="on-hazirlik">
+<span id="giris"></span><h1><strong>Ön Hazırlık</strong><a class="headerlink" href="#on-hazirlik" title="Permalink to this heading">¶</a></h1>
+<p>Paket derleme işlemi öncesi aşağıdaki konuları bilmemiz gerekmektedir. Bunlar;</p>
+<ol class="arabic simple">
+<li><p>Derleme(Dinamik/Static)</p></li>
+<li><p>chroot Kullanımı</p></li>
+<li><p>İso Oluşturma</p></li>
+<li><p>ssh Kullanımı</p></li>
+<li><p>sftp Kullanımı</p></li>
+<li><p>scp Kullanımı</p></li>
+<li><p>VirtualBox Kullanmı</p></li>
+<li><p>cfdisk Kullanımı</p></li>
+</ol>
+<p>Burada liste halinde verilen konu başlıkları bu dokümanın <strong>Yardımcı Konular</strong> bölümünde anlatılmaktadır.</p>
+<p>Bundan sonraki adımlarda kendi dağıtımımızın <strong>LXDE masaüstü ortmaını</strong> derleyerek <strong>X Pencere Sistemi</strong> üzerinde çalıştıracağız!</p>
+<p>GNU Araçlarıyla <strong>LXDE Masaüstü Ortamının</strong> derleme işlemini <strong>kly Paket Sistemi</strong> kullanılarak derleyeceğiz. Derleme işlemini <strong>kly -c</strong> komutuyla yapacağız. Derlenen paketleri <strong>scp</strong> ve <strong>sftp</strong> kullanarak <strong>Temel Sistem</strong> üzerine kopyalayacağız. <strong>kly -pi</strong> komutumuzla kopyaladığımız paketi <strong>X Pencere Sistemi</strong> üzerine kuracağız. Oluşturduğumuz paketleri istersek github'a yükleyip. github üzerinden kururabiliriz.</p>
+</section>
+<section id="lxde-masaustu-ortami-icin-gerekli-paketler">
+<h1><strong>LXDE Masaüstü Ortamı için Gerekli Paketler</strong><a class="headerlink" href="#lxde-masaustu-ortami-icin-gerekli-paketler" title="Permalink to this heading">¶</a></h1>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>0- <a class="reference internal" href="#giris"><span class="std std-ref">Ön Hazırlık</span></a></p></td>
+<td><p>29- <a class="reference internal" href="29-libXfont.html#libxfont"><span class="std std-ref">libXfont</span></a></p></td>
+<td><p>58- <a class="reference internal" href="58-cups.html#cups"><span class="std std-ref">cups</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>1- <a class="reference internal" href="01-libfm.html#libfm"><span class="std std-ref">libfm</span></a></p></td>
+<td><p>30- <a class="reference internal" href="30-libxkbcommon.html#libxkbcommon"><span class="std std-ref">libxkbcommon</span></a></p></td>
+<td><p>59- <a class="reference internal" href="59-gdbm.html#gdbm"><span class="std std-ref">gdbm</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>2- <a class="reference internal" href="02-menu-cache.html#menu-cache"><span class="std std-ref">menu-cache</span></a></p></td>
+<td><p>31- <a class="reference internal" href="31-libxkbui.html#libxkbui"><span class="std std-ref">libxkbui</span></a></p></td>
+<td><p>60- <a class="reference internal" href="60-mpdecimal.html#mpdecimal"><span class="std std-ref">mpdecimal</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>3- <a class="reference internal" href="03-libfm-extra.html#libfm-extra"><span class="std std-ref">libfm-extra</span></a></p></td>
+<td><p>32- <a class="reference internal" href="32-libxklavier.html#libxklavier"><span class="std std-ref">libxklavier</span></a></p></td>
+<td><p>61- <a class="reference internal" href="61-libgusb.html#libgusb"><span class="std std-ref">libgusb</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>4- <a class="reference internal" href="04-lxmenu-data.html#lxmenu-data"><span class="std std-ref">lxmenu-data</span></a></p></td>
+<td><p>33- <a class="reference internal" href="33-libXpresent.html#libxpresent"><span class="std std-ref">libXpresent</span></a></p></td>
+<td><p>62- <a class="reference internal" href="62-libisl.html#libisl"><span class="std std-ref">libisl</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>5- <a class="reference internal" href="05-lxde-common.html#lxde-common"><span class="std std-ref">lxde-common</span></a></p></td>
+<td><p>34- <a class="reference internal" href="34-libXres.html#libxres"><span class="std std-ref">libXres</span></a></p></td>
+<td><p>63- <a class="reference internal" href="63-libmpc.html#libmpc"><span class="std std-ref">libmpc</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>6- <a class="reference internal" href="06-lxappearance.html#lxappearance"><span class="std std-ref">lxappearance</span></a></p></td>
+<td><p>35- <a class="reference internal" href="35-libxss.html#libxss"><span class="std std-ref">libxss</span></a></p></td>
+<td><p>64- <a class="reference internal" href="64-duktape.html#duktape"><span class="std std-ref">duktape</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>7- <a class="reference internal" href="07-lxinput.html#lxinput"><span class="std std-ref">lxinput</span></a></p></td>
+<td><p>36- <a class="reference internal" href="36-libXtst.html#libxtst"><span class="std std-ref">libXtst</span></a></p></td>
+<td><p>65- <a class="reference internal" href="65-atkmm.html#atkmm"><span class="std std-ref">atkmm</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>8- <a class="reference internal" href="08-lxrandr.html#lxrandr"><span class="std std-ref">lxrandr</span></a></p></td>
+<td><p>37- <a class="reference internal" href="37-libXv.html#libxv"><span class="std std-ref">libXv</span></a></p></td>
+<td><p>66- <a class="reference internal" href="66-at-spi2-core.html#at-spi2-core"><span class="std std-ref">at-spi2-core</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>9-  <a class="reference internal" href="09-lxsession.html#lxsession"><span class="std std-ref">lxsession</span></a></p></td>
+<td><p>38- <a class="reference internal" href="38-libXvMC.html#libxvmc"><span class="std std-ref">libXvMC</span></a></p></td>
+<td><p>67- <a class="reference internal" href="67-libtiff.html#libtiff"><span class="std std-ref">libtiff</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>10- <a class="reference internal" href="10-lxpanel.html#lxpanel"><span class="std std-ref">lxpanel</span></a></p></td>
+<td><p>39- <a class="reference internal" href="39-libXxf86dga.html#libxxf86dga"><span class="std std-ref">libXxf86dga</span></a></p></td>
+<td><p>68- <a class="reference internal" href="68-libepoxy.html#libepoxy"><span class="std std-ref">libepoxy</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>11- <a class="reference internal" href="11-lxtask.html#lxtask"><span class="std std-ref">lxtask</span></a></p></td>
+<td><p>40- <a class="reference internal" href="40-libXxf86vm.html#libxxf86vm"><span class="std std-ref">libXxf86vm</span></a></p></td>
+<td><p>69- <a class="reference internal" href="69-gobject-introspection.html#gobject-introspection"><span class="std std-ref">gobject-introspection</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>12- <a class="reference internal" href="12-lxterminal.html#lxterminal"><span class="std std-ref">lxterminal</span></a></p></td>
+<td><p>41- <a class="reference internal" href="41-tslib.html#tslib"><span class="std std-ref">tslib</span></a></p></td>
+<td><p>70- <a class="reference internal" href="70-p11-kit.html#p11-kit"><span class="std std-ref">p11-kit</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>13- <a class="reference internal" href="13-pcmanfm.html#pcmanfm"><span class="std std-ref">pcmanfm</span></a></p></td>
+<td><p>42- <a class="reference internal" href="42-vte3.html#vte3"><span class="std std-ref">vte3</span></a></p></td>
+<td><p>71- <a class="reference internal" href="71-nettle.html#nettle"><span class="std std-ref">nettle</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>14- <a class="reference internal" href="14-lxlauncher.html#lxlauncher"><span class="std std-ref">lxlauncher</span></a></p></td>
+<td><p>43- <a class="reference internal" href="43-xapp.html#xapp"><span class="std std-ref">xapp</span></a></p></td>
+<td><p>72- <a class="reference internal" href="72-desktop-file-utils.html#desktop-file-utils"><span class="std std-ref">desktop-file-utils</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>15- <a class="reference internal" href="15-lxhotkey.html#lxhotkey"><span class="std std-ref">lxhotkey</span></a></p></td>
+<td><p>44- <a class="reference internal" href="44-xcb-util-cursor.html#xcb-util-cursor"><span class="std std-ref">xcb-util-cursor</span></a></p></td>
+<td><p>73- <a class="reference internal" href="73-libidn2.html#libidn2"><span class="std std-ref">libidn2</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>16- <a class="reference internal" href="16-lxde-icon-theme.html#lxde-icon-theme"><span class="std std-ref">lxde-icon-theme</span></a></p></td>
+<td><p>45- <a class="reference internal" href="45-xcb-util-errors.html#xcb-util-errors"><span class="std std-ref">xcb-util-errors</span></a></p></td>
+<td><p>74- <a class="reference internal" href="74-locale-tr.html#locale-tr"><span class="std std-ref">locale-tr</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>17- <a class="reference internal" href="17-libjpeg-turbo.html#libjpeg-turbo"><span class="std std-ref">libjpeg-turbo</span></a></p></td>
+<td><p>46- <a class="reference internal" href="46-xcb-util-image.html#xcb-util-image"><span class="std std-ref">xcb-util-image</span></a></p></td>
+<td><p>75- <a class="reference internal" href="75-hicolor-icon-theme.html#hicolor-icon-theme"><span class="std std-ref">hicolor-icon-theme</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>18- <a class="reference internal" href="18-cairo.html#cairo"><span class="std std-ref">cairo</span></a></p></td>
+<td><p>47- <a class="reference internal" href="47-xcb-util-keysyms.html#xcb-util-keysyms"><span class="std std-ref">xcb-util-keysyms</span></a></p></td>
+<td><p>76- <a class="reference internal" href="76-polkit.html#polkit"><span class="std std-ref">polkit</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>19- <a class="reference internal" href="19-gdk-pixbuf.html#gdk-pixbuf"><span class="std std-ref">gdk-pixbuf</span></a></p></td>
+<td><p>48- <a class="reference internal" href="48-xcb-util-renderutil.html#xcb-util-renderutil"><span class="std std-ref">xcb-util-renderutil</span></a></p></td>
+<td><p>77- <a class="reference internal" href="77-libjpeg62.html#libjpeg62"><span class="std std-ref">libjpeg62</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>20- <a class="reference internal" href="20-gtksourceview4.html#gtksourceview4"><span class="std std-ref">gtksourceview4</span></a></p></td>
+<td><p>49- <a class="reference internal" href="49-xcb-util-wm.html#xcb-util-wm"><span class="std std-ref">xcb-util-wm</span></a></p></td>
+<td><p>78- <a class="reference internal" href="78-gpicview.html#gpicview"><span class="std std-ref">gpicview</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>21- <a class="reference internal" href="21-hsakmt.html#hsakmt"><span class="std std-ref">hsakmt</span></a></p></td>
+<td><p>50- <a class="reference internal" href="50-xtrans.html#xtrans"><span class="std std-ref">xtrans</span></a></p></td>
+<td><p>79- <a class="reference internal" href="79-libdmx.html#libdmx"><span class="std std-ref">libdmx</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>22- <a class="reference internal" href="22-libFS.html#libfs"><span class="std std-ref">libFS</span></a></p></td>
+<td><p>51- <a class="reference internal" href="51-libkeybinder3.html#libkeybinder3"><span class="std std-ref">libkeybinder3</span></a></p></td>
+<td><p>80- <a class="reference internal" href="80-lightdm.html#lightdm"><span class="std std-ref">lightdm</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>23- <a class="reference internal" href="23-libnotify.html#libnotify"><span class="std std-ref">libnotify</span></a></p></td>
+<td><p>52- <a class="reference internal" href="52-libexif.html#libexif"><span class="std std-ref">libexif</span></a></p></td>
+<td><p>81- <a class="reference internal" href="81-lightdm-gtk-greeter.html#lightdm-gtk-greeter"><span class="std std-ref">lightdm-gtk-greeter</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>24- <a class="reference internal" href="24-libvdpau.html#libvdpau"><span class="std std-ref">libvdpau</span></a></p></td>
+<td><p>53- <a class="reference internal" href="53-gtk3.html#gtk3"><span class="std std-ref">gtk3</span></a></p></td>
+<td><p>82- <a class="reference internal" href="82-libgpg-error.html#libgpg-error"><span class="std std-ref">libgpg-error</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>25- <a class="reference internal" href="25-libwnck3.html#libwnck3"><span class="std std-ref">libwnck3</span></a></p></td>
+<td><p>54- <a class="reference internal" href="54-shared-mime-info.html#shared-mime-info"><span class="std std-ref">shared-mime-info</span></a></p></td>
+<td><p>83- <a class="reference internal" href="83-libgcrypt.html#libgcrypt"><span class="std std-ref">libgcrypt</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>26- <a class="reference internal" href="26-libXaw3d.html#libxaw3d"><span class="std std-ref">libXaw3d</span></a></p></td>
+<td><p>55- <a class="reference internal" href="55-lz4.html#lz4"><span class="std std-ref">lz4</span></a></p></td>
+<td><p>84-</p></td>
+</tr>
+<tr class="row-even"><td><p>27- <a class="reference internal" href="27-libXcomposite.html#libxcomposite"><span class="std std-ref">libXcomposite</span></a></p></td>
+<td><p>56- <a class="reference internal" href="56-gnutls.html#gnutls"><span class="std std-ref">gnutls</span></a></p></td>
+<td><p>85-</p></td>
+</tr>
+<tr class="row-odd"><td><p>28- <a class="reference internal" href="28-libXdamage.html#libxdamage"><span class="std std-ref">libXdamage</span></a></p></td>
+<td><p>57- <a class="reference internal" href="57-lcms2.html#lcms2"><span class="std std-ref">lcms2</span></a></p></td>
+<td><p>86-</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="bagimlilik-zinciri">
+<h1><strong>Bağımlılık Zinciri</strong><a class="headerlink" href="#bagimlilik-zinciri" title="Permalink to this heading">¶</a></h1>
+<p><strong>LXDE</strong> paketleri <strong>gtk3</strong> ile derlenecek. Bunun için ilk olarak <strong>libfm</strong> paketinin <strong>gtk3</strong> ile derlenmeli ve sonra mevcut sistemimize kurmalıyız. Sistemimize kurulduktan sonra <strong>LXDE</strong> paketlerini <strong>gtk3</strong> ile  derlenmeli. <strong>libfm</strong> ve <strong>menu-cache</strong> ilk kurulması gereken paketler. Paket derleme işlemine başlamadan önce, aşağıdaki temel araçları sisteminize kurmalısınız.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">debootstrap</span> <span class="n">xorriso</span> <span class="n">mtools</span> <span class="n">make</span> <span class="n">squashfs</span><span class="o">-</span><span class="n">tools</span> <span class="n">gcc</span> <span class="n">wget</span> <span class="n">unzip</span> <span class="n">xz</span><span class="o">-</span><span class="n">utils</span> <span class="n">tar</span> <span class="n">zstd</span> <span class="n">fakeroot</span> \
+<span class="n">autoconf</span> <span class="n">automake</span> <span class="n">autotools</span><span class="o">-</span><span class="n">dev</span> <span class="n">make</span> <span class="n">meson</span> <span class="n">cmake</span> <span class="n">ninja</span><span class="o">-</span><span class="n">build</span> <span class="n">pkgconf</span> <span class="n">patch</span> <span class="n">libtool</span> <span class="n">grub</span><span class="o">-</span><span class="n">pc</span> <span class="n">grub</span><span class="o">-</span><span class="n">pc</span><span class="o">-</span><span class="nb">bin</span>
+</pre></div>
+</div>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Gezinti</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/2-yazar.html"><strong>Yazar</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/2-yazar.html#paket-derleme"><strong>Paket Derleme</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/2-yazar.html#iletisim"><strong>İletişim</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/3-onsoz.html">Ön Söz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/4-icindekiler.html">İçindekiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01.giris/index.html"><strong>Temel Kavramlar</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.sistemin-hazirlanmas%C4%B1/index.html"><strong>X Pencere Sistemin Hazırlanması</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><strong>GNU Araçlarıyla Pencere Yöneticisi Derleme</strong></a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><strong>Ön Hazırlık</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lxde-masaustu-ortami-icin-gerekli-paketler"><strong>LXDE Masaüstü Ortamı için Gerekli Paketler</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bagimlilik-zinciri"><strong>Bağımlılık Zinciri</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-libfm.html"><strong>libfm</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-menu-cache.html"><strong>menu-cache</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-libfm-extra.html"><strong>libfm-extra</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-lxmenu-data.html"><strong>lxmenu-data</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-lxde-common.html"><strong>lxde-common</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="06-lxappearance.html"><strong>lxappearance</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="07-lxinput.html"><strong>lxinput</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="08-lxrandr.html"><strong>lxrandr</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="09-lxsession.html"><strong>lxsession</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="10-lxpanel.html"><strong>lxpanel</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-lxtask.html"><strong>lxtask</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="12-lxterminal.html"><strong>lxterminal</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="13-pcmanfm.html"><strong>pcmanfm</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="14-lxlauncher.html"><strong>lxlauncher</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="15-lxhotkey.html"><strong>lxhotkey</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="16-lxde-icon-theme.html"><strong>lxde-icon-theme</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="17-libjpeg-turbo.html"><strong>libjpeg-turbo</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="18-cairo.html"><strong>cairo</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="19-gdk-pixbuf.html"><strong>gdk-pixbuf</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="20-gtksourceview4.html"><strong>gtksourceview4</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="21-hsakmt.html"><strong>hsakmt</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="22-libFS.html"><strong>libFS</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="23-libnotify.html"><strong>libnotify</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="24-libvdpau.html"><strong>libvdpau</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="25-libwnck3.html"><strong>libwnck3</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="26-libXaw3d.html"><strong>libXaw3d</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="27-libXcomposite.html"><strong>libXcomposite</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="28-libXdamage.html"><strong>libXdamage</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="29-libXfont.html"><strong>libXfont</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="30-libxkbcommon.html"><strong>libxkbcommon</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="31-libxkbui.html"><strong>libxkbui</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="32-libxklavier.html"><strong>libxklavier</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="33-libXpresent.html"><strong>libXpresent</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="34-libXres.html"><strong>libXres</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="35-libxss.html"><strong>libxss</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="36-libXtst.html"><strong>libXtst</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="37-libXv.html"><strong>libXv</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="38-libXvMC.html"><strong>libXvMC</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="39-libXxf86dga.html"><strong>libXxf86dga</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="40-libXxf86vm.html"><strong>libXxf86vm</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="41-tslib.html"><strong>tslib</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="42-vte3.html"><strong>vte3</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="43-xapp.html"><strong>xapp</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="44-xcb-util-cursor.html"><strong>xcb-util-cursor</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="45-xcb-util-errors.html"><strong>xcb-util-errors</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="46-xcb-util-image.html"><strong>xcb-util-image</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="47-xcb-util-keysyms.html"><strong>xcb-util-keysyms</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="48-xcb-util-renderutil.html"><strong>xcb-util-renderutil</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="49-xcb-util-wm.html"><strong>xcb-util-wm</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="50-xtrans.html"><strong>xtrans</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="51-libkeybinder3.html"><strong>libkeybinder3</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="52-libexif.html"><strong>libexif</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="53-gtk3.html"><strong>gtk3</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="54-shared-mime-info.html"><strong>shared-mime-info</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="55-lz4.html"><strong>lz4</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="56-gnutls.html"><strong>gnutls</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="57-lcms2.html"><strong>lcms2</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="58-cups.html"><strong>cups</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="59-gdbm.html"><strong>gdbm</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="60-mpdecimal.html"><strong>mpdecimal</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="61-libgusb.html"><strong>libgusb</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="62-libisl.html"><strong>libisl</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="63-libmpc.html"><strong>libmpc</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="64-duktape.html"><strong>duktape</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="65-atkmm.html"><strong>atkmm</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="66-at-spi2-core.html"><strong>at-spi2-core</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="67-libtiff.html"><strong>libtiff</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="68-libepoxy.html"><strong>libepoxy</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="69-gobject-introspection.html"><strong>gobject-introspection</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="70-p11-kit.html"><strong>p11-kit</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="71-nettle.html"><strong>nettle</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="72-desktop-file-utils.html"><strong>desktop-file-utils</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="73-libidn2.html"><strong>libidn2</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="74-locale-tr.html"><strong>locale-tr</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="75-hicolor-icon-theme.html"><strong>hicolor-icon-theme</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="76-polkit.html"><strong>polkit</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="77-libjpeg62.html"><strong>libjpeg62</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="78-gpicview.html"><strong>gpicview</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="79-libdmx.html"><strong>libdmx</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="80-lightdm.html"><strong>lightdm</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="81-lightdm-gtk-greeter.html"><strong>lightdm-gtk-greeter</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="82-libgpg-error.html"><strong>libgpg-error</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="83-libgcrypt.html"><strong>libgcrypt</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../10.iso-hazirlama/index.html"><strong>ISO Hazırlama</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12.sistemin-calistirma-inceleme/index.html">Oluşan Sistemin Çalıştırılması ve İncelenmesi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../14.lxde-calistirma/index.html"><strong>Lxde Masaüstü Ortamı Çalıştırma</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15.yardimci-konular/index.html">Yardımcı Konular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2-kaynak.html"><strong>Kaynaklar</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3-contact-sonkapak.html"><strong>Geliştiricilere Mesajımız</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-lisans.html"><strong>Lisans Bilgileri</strong></a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;distro 2023.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/09.paket-derleme/000-giris.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>libXpresent &#8212; distro Wiki  belgelendirmesi</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="canonical" href="https://kendilinuxunuyap.github.io/09.paket-derleme/33-libXpresent.html" />
+    <link rel="index" title="Dizin" href="../genindex.html" />
+    <link rel="search" title="Ara" href="../search.html" />
+    <link rel="next" title="libXres" href="34-libXres.html" />
+    <link rel="prev" title="libxklavier" href="32-libxklavier.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="libxpresent">
+<span id="id1"></span><h1><strong>libXpresent</strong><a class="headerlink" href="#libxpresent" title="Permalink to this heading">¶</a></h1>
+<p>X11 sistemlerinde “Present” (sunum) uzantısını kullanan kütüphanedir.</p>
+<section id="paketi-derleme">
+<h2><strong>Paketi Derleme :</strong><a class="headerlink" href="#paketi-derleme" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+<span class="nv">name</span><span class="o">=</span><span class="s2">&quot;libXpresent&quot;</span>
+<span class="nv">version</span><span class="o">=</span><span class="s2">&quot;1.0.1&quot;</span>
+<span class="nv">description</span><span class="o">=</span><span class="s2">&quot;X Present Extension C Library&quot;</span>
+<span class="nv">source</span><span class="o">=</span><span class="s2">&quot;https://www.x.org/archive/individual/lib/libXpresent-</span><span class="nv">$version</span><span class="s2">.tar.xz&quot;</span>
+<span class="nv">depends</span><span class="o">=</span><span class="s2">&quot;libX11,xorgproto,libXext,libXfixes,libXrandr&quot;</span>
+<span class="nv">group</span><span class="o">=</span><span class="s2">&quot;x11.libs&quot;</span>
+
+
+setup<span class="o">(){</span>
+<span class="w">    </span><span class="nv">$SOURCEDIR</span>/configure<span class="w"> </span>--prefix<span class="o">=</span>/usr<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>--libdir<span class="o">=</span>/usr/lib64/
+<span class="o">}</span>
+
+build<span class="o">(){</span>
+<span class="w">    </span>make
+<span class="o">}</span>
+
+package<span class="o">(){</span>
+<span class="w">    </span>make<span class="w"> </span>install<span class="w"> </span><span class="nv">DESTDIR</span><span class="o">=</span><span class="nv">$DESTDIR</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p><strong>Not:</strong> Burada verilen derleme talimatı(script) <strong>kly Paket Sistemi</strong>'ni kullanarak paketi derler ve oluştur. Oluşan paket(<strong>.kly uzantılı dosya</strong>)  <strong>kly Paket Sistemi</strong> kullanılarak siteme yüklenebilir. <strong>kly Paket Sistemiyle Paket Yapma</strong> konusunu okumak için <a class="reference external" href="#klypaketyap">tıklayınız.</a></p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Gezinti</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/2-yazar.html"><strong>Yazar</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/2-yazar.html#paket-derleme"><strong>Paket Derleme</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/2-yazar.html#iletisim"><strong>İletişim</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/3-onsoz.html">Ön Söz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/4-icindekiler.html">İçindekiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01.giris/index.html"><strong>Temel Kavramlar</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.sistemin-hazirlanmas%C4%B1/index.html"><strong>X Pencere Sistemin Hazırlanması</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><strong>GNU Araçlarıyla Pencere Yöneticisi Derleme</strong></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="000-giris.html"><strong>Ön Hazırlık</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="000-giris.html#lxde-masaustu-ortami-icin-gerekli-paketler"><strong>LXDE Masaüstü Ortamı için Gerekli Paketler</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="000-giris.html#bagimlilik-zinciri"><strong>Bağımlılık Zinciri</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-libfm.html"><strong>libfm</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="02-menu-cache.html"><strong>menu-cache</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="03-libfm-extra.html"><strong>libfm-extra</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="04-lxmenu-data.html"><strong>lxmenu-data</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="05-lxde-common.html"><strong>lxde-common</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="06-lxappearance.html"><strong>lxappearance</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="07-lxinput.html"><strong>lxinput</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="08-lxrandr.html"><strong>lxrandr</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="09-lxsession.html"><strong>lxsession</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="10-lxpanel.html"><strong>lxpanel</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="11-lxtask.html"><strong>lxtask</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="12-lxterminal.html"><strong>lxterminal</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="13-pcmanfm.html"><strong>pcmanfm</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="14-lxlauncher.html"><strong>lxlauncher</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="15-lxhotkey.html"><strong>lxhotkey</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="16-lxde-icon-theme.html"><strong>lxde-icon-theme</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="17-libjpeg-turbo.html"><strong>libjpeg-turbo</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="18-cairo.html"><strong>cairo</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="19-gdk-pixbuf.html"><strong>gdk-pixbuf</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="20-gtksourceview4.html"><strong>gtksourceview4</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="21-hsakmt.html"><strong>hsakmt</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="22-libFS.html"><strong>libFS</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="23-libnotify.html"><strong>libnotify</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="24-libvdpau.html"><strong>libvdpau</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="25-libwnck3.html"><strong>libwnck3</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="26-libXaw3d.html"><strong>libXaw3d</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="27-libXcomposite.html"><strong>libXcomposite</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="28-libXdamage.html"><strong>libXdamage</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="29-libXfont.html"><strong>libXfont</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="30-libxkbcommon.html"><strong>libxkbcommon</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="31-libxkbui.html"><strong>libxkbui</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="32-libxklavier.html"><strong>libxklavier</strong></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><strong>libXpresent</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#paketi-derleme"><strong>Paketi Derleme :</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="34-libXres.html"><strong>libXres</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="35-libxss.html"><strong>libxss</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="36-libXtst.html"><strong>libXtst</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="37-libXv.html"><strong>libXv</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="38-libXvMC.html"><strong>libXvMC</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="39-libXxf86dga.html"><strong>libXxf86dga</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="40-libXxf86vm.html"><strong>libXxf86vm</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="41-tslib.html"><strong>tslib</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="42-vte3.html"><strong>vte3</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="43-xapp.html"><strong>xapp</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="44-xcb-util-cursor.html"><strong>xcb-util-cursor</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="45-xcb-util-errors.html"><strong>xcb-util-errors</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="46-xcb-util-image.html"><strong>xcb-util-image</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="47-xcb-util-keysyms.html"><strong>xcb-util-keysyms</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="48-xcb-util-renderutil.html"><strong>xcb-util-renderutil</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="49-xcb-util-wm.html"><strong>xcb-util-wm</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="50-xtrans.html"><strong>xtrans</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="51-libkeybinder3.html"><strong>libkeybinder3</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="52-libexif.html"><strong>libexif</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="53-gtk3.html"><strong>gtk3</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="54-shared-mime-info.html"><strong>shared-mime-info</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="55-lz4.html"><strong>lz4</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="56-gnutls.html"><strong>gnutls</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="57-lcms2.html"><strong>lcms2</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="58-cups.html"><strong>cups</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="59-gdbm.html"><strong>gdbm</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="60-mpdecimal.html"><strong>mpdecimal</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="61-libgusb.html"><strong>libgusb</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="62-libisl.html"><strong>libisl</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="63-libmpc.html"><strong>libmpc</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="64-duktape.html"><strong>duktape</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="65-atkmm.html"><strong>atkmm</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="66-at-spi2-core.html"><strong>at-spi2-core</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="67-libtiff.html"><strong>libtiff</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="68-libepoxy.html"><strong>libepoxy</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="69-gobject-introspection.html"><strong>gobject-introspection</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="70-p11-kit.html"><strong>p11-kit</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="71-nettle.html"><strong>nettle</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="72-desktop-file-utils.html"><strong>desktop-file-utils</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="73-libidn2.html"><strong>libidn2</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="74-locale-tr.html"><strong>locale-tr</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="75-hicolor-icon-theme.html"><strong>hicolor-icon-theme</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="76-polkit.html"><strong>polkit</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="77-libjpeg62.html"><strong>libjpeg62</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="78-gpicview.html"><strong>gpicview</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="79-libdmx.html"><strong>libdmx</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="80-lightdm.html"><strong>lightdm</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="81-lightdm-gtk-greeter.html"><strong>lightdm-gtk-greeter</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="82-libgpg-error.html"><strong>libgpg-error</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="83-libgcrypt.html"><strong>libgcrypt</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../10.iso-hazirlama/index.html"><strong>ISO Hazırlama</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12.sistemin-calistirma-inceleme/index.html">Oluşan Sistemin Çalıştırılması ve İncelenmesi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../14.lxde-calistirma/index.html"><strong>Lxde Masaüstü Ortamı Çalıştırma</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15.yardimci-konular/index.html">Yardımcı Konular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2-kaynak.html"><strong>Kaynaklar</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3-contact-sonkapak.html"><strong>Geliştiricilere Mesajımız</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-lisans.html"><strong>Lisans Bilgileri</strong></a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;distro 2023.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/09.paket-derleme/33-libXpresent.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

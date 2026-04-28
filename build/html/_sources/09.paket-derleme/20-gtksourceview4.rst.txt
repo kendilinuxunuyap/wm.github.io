@@ -1,0 +1,43 @@
+.. _gtksourceview4:
+
+**gtksourceview4**
+==================
+
+GTK+ tabanlı uygulamalar için metin düzenleme paketidir.
+
+**Paketi Derleme :**
+--------------------
+
+.. code-block:: bash
+
+    #!/usr/bin/env bash
+    name="gtksourceview4"
+    version="4.8.4"
+    description="A text widget adding syntax highlighting and more to GNOME"
+    source="https://download.gnome.org/sources/gtksourceview/${version%.*}/gtksourceview-${version}.tar.xz"
+    depends="gtk3,libxml2,gobject-introspection"
+    group="x11.libs"
+    
+    
+    setup(){
+    	cd $SOURCEDIR
+        meson setup $BUILDDIR --prefix=/usr \
+            --libdir=/usr/lib64/ \
+            -Db_lto=true \
+            -Dgtk_doc=true
+    }
+    
+    build(){
+        ninja -C $BUILDDIR
+    }
+    
+    package(){
+        DESTDIR=$DESTDIR ninja -C $BUILDDIR install
+    }
+
+**Not:** Burada verilen derleme talimatı(script) **kly Paket Sistemi**'ni kullanarak paketi derler ve oluştur. Oluşan paket(**.kly uzantılı dosya**)  **kly Paket Sistemi** kullanılarak siteme yüklenebilir. **kly Paket Sistemiyle Paket Yapma** konusunu okumak için `tıklayınız. <#klypaketyap>`_
+
+    
+.. raw:: pdf
+
+   PageBreak

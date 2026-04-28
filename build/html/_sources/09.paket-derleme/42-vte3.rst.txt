@@ -1,0 +1,47 @@
+.. _vte3:
+
+**vte3**
+========
+
+GTK+ tabanlıdır. Terminal öykünmesi sağlamak için kullanılır.
+
+**Paketi Derleme :**
+--------------------
+
+.. code-block:: bash
+
+	#!/usr/bin/env bash
+	name="vte3"
+	version="0.76.2"
+	description="vte Library providing a virtual terminal emulator widget"
+	source="https://gitlab.gnome.org/GNOME/vte/-/archive/${version}/vte-${version}.tar.gz"
+	depends="cairo,fribidi,gcc,gdk-pixbuf2,glib,glibc,gnutls,icu,lz4,pango,pcre2"
+	builddepend="at-spi2-core,gi-docgen,git,gobject-introspection,gperf,gtk3,meson,vala"
+	group="x11.libs"
+
+	setup(){
+	cd $SOURCEDIR
+		meson setup $BUILDDIR --prefix=/usr \
+			--libdir=/usr/lib64/ \
+			-Db_lto=false \
+			-Ddocs=false \
+			-Dgtk3=true \
+			-Dgtk4=false \
+			-D_systemd=false 
+	}
+
+	build(){
+		ninja -C $BUILDDIR
+	}
+
+	package(){
+		DESTDIR=$DESTDIR ninja -C $BUILDDIR install
+	}
+
+
+**Not:** Burada verilen derleme talimatı(script) **kly Paket Sistemi**'ni kullanarak paketi derler ve oluştur. Oluşan paket(**.kly uzantılı dosya**)  **kly Paket Sistemi** kullanılarak siteme yüklenebilir. **kly Paket Sistemiyle Paket Yapma** konusunu okumak için `tıklayınız. <#klypaketyap>`_
+
+
+.. raw:: pdf
+
+   PageBreak

@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>pkexec, /etc/shells ve Polkit İlişkisi &#8212; distro Wiki  belgelendirmesi</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="canonical" href="https://kendilinuxunuyap.github.io/15.yardimci-konular/143-pkexec.html" />
+    <link rel="index" title="Dizin" href="../genindex.html" />
+    <link rel="search" title="Ara" href="../search.html" />
+    <link rel="next" title="glib-compile-schemas Kullanımı" href="144-glib-compile-schemas-.html" />
+    <link rel="prev" title="polkit Yetkilendirme" href="142-polkit.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="pkexec-etc-shells-ve-polkit-iliskisi">
+<h1><strong>pkexec, /etc/shells ve Polkit İlişkisi</strong><a class="headerlink" href="#pkexec-etc-shells-ve-polkit-iliskisi" title="Permalink to this heading">¶</a></h1>
+<p>Bu belge, <code class="docutils literal notranslate"><span class="pre">pkexec</span></code> komutunun çalışması için gerekli olan <code class="docutils literal notranslate"><span class="pre">/etc/shells</span></code>
+bağlantısını, Polkit ile olan ilişkisini ve doğru yapılandırma adımlarını açıklar.</p>
+<section id="temel-iliski">
+<h2><strong>1 — Temel İlişki</strong><a class="headerlink" href="#temel-iliski" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>pkexec</strong>, bir komutu yönetici yetkileri ile çalıştırmak için kullanılır.</p></li>
+<li><p>Arka planda <strong>Polkit</strong> (PolicyKit) kullanarak yetkilendirme yapar.</p></li>
+<li><p>Yetkilendirme sırasında <strong>PAM (Pluggable Authentication Modules)</strong> kullanılır.</p></li>
+<li><p>Birçok PAM yapılandırması, kullanıcının giriş kabuğunun <strong>/etc/shells</strong> içinde listelenmiş olmasını zorunlu kılar.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Not</p>
+<p>Eğer kullandığınız kabuk (örn. <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code>, <code class="docutils literal notranslate"><span class="pre">/bin/zsh</span></code>, <code class="docutils literal notranslate"><span class="pre">/usr/bin/fish</span></code>)
+<code class="docutils literal notranslate"><span class="pre">/etc/shells</span></code> içinde yoksa <code class="docutils literal notranslate"><span class="pre">pkexec</span></code> ile kimlik doğrulama başarısız olabilir.</p>
+</div>
+</section>
+<section id="etc-shells-dosyasini-kontrol-etme">
+<h2><strong>2 — /etc/shells Dosyasını Kontrol Etme</strong><a class="headerlink" href="#etc-shells-dosyasini-kontrol-etme" title="Permalink to this heading">¶</a></h2>
+<p>Geçerli kabuğunuz:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo $SHELL
+</pre></div>
+</div>
+<p>Kabuğun <code class="docutils literal notranslate"><span class="pre">/etc/shells</span></code> içinde olup olmadığını kontrol edin:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grep</span> <span class="s2">&quot;$(basename $SHELL)&quot;</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">shells</span>
+</pre></div>
+</div>
+<p><strong>Eksikse ekleyin</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">sh</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;echo /bin/bash &gt;&gt; /etc/shells&#39;</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Uyarı</p>
+<p>Güvenlik sebebiyle yalnızca gerçek kabuk programlarının yolunu ekleyin.
+Rastgele betikler veya çalıştırılabilir dosyalar eklenmemelidir.</p>
+</div>
+</section>
+<section id="polkit-ile-baglanti">
+<h2><strong>3 — Polkit ile Bağlantı</strong><a class="headerlink" href="#polkit-ile-baglanti" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pkexec</span></code> çalışırken <strong>Polkit</strong> üzerinden yetki ister.</p></li>
+<li><p>Polkit kuralları ile hangi kullanıcı veya grubun yetki alabileceğini belirleyebilirsiniz.</p></li>
+<li><p>Eğer kullanıcı grubunuz Polkit tarafından <strong>admin</strong> olarak tanınmıyorsa, <code class="docutils literal notranslate"><span class="pre">pkexec</span></code> ile çalıştırma yetkiniz olmayabilir.</p></li>
+</ul>
+</section>
+<section id="wheel-grubunu-yonetici-olarak-tanimlama">
+<h2><strong>4 — Wheel Grubunu Yönetici Olarak Tanımlama</strong><a class="headerlink" href="#wheel-grubunu-yonetici-olarak-tanimlama" title="Permalink to this heading">¶</a></h2>
+<p>1) Dosya oluşturun:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">polkit</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">rules</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="mi">40</span><span class="o">-</span><span class="n">wheel</span><span class="o">-</span><span class="n">admin</span><span class="o">.</span><span class="n">rules</span>
+</pre></div>
+</div>
+<p>İçeriği:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span> <span class="n">Mark</span> <span class="n">wheel</span> <span class="n">group</span> <span class="k">as</span> <span class="n">administrators</span> <span class="p">(</span><span class="n">use</span> <span class="n">own</span> <span class="n">password</span><span class="p">)</span> <span class="o">*/</span>
+<span class="n">polkit</span><span class="o">.</span><span class="n">addAdminRule</span><span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="n">action</span><span class="p">,</span> <span class="n">subject</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">subject</span><span class="o">.</span><span class="n">isInGroup</span><span class="p">(</span><span class="s2">&quot;wheel&quot;</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;unix-group:wheel&quot;</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>2) Dosya izinlerini ayarlayın:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">chown</span> <span class="n">root</span><span class="p">:</span><span class="n">root</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">polkit</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">rules</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="mi">40</span><span class="o">-</span><span class="n">wheel</span><span class="o">-</span><span class="n">admin</span><span class="o">.</span><span class="n">rules</span>
+<span class="n">sudo</span> <span class="n">chmod</span> <span class="mi">0644</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">polkit</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">rules</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="mi">40</span><span class="o">-</span><span class="n">wheel</span><span class="o">-</span><span class="n">admin</span><span class="o">.</span><span class="n">rules</span>
+</pre></div>
+</div>
+<p>3) Kullanıcınızı <code class="docutils literal notranslate"><span class="pre">wheel</span></code> grubuna ekleyin:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo usermod -aG wheel $USER
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Oturumu kapatıp tekrar açın.</p></li>
+</ol>
+</section>
+<section id="test">
+<h2><strong>5 — Test</strong><a class="headerlink" href="#test" title="Permalink to this heading">¶</a></h2>
+<p>1) <code class="docutils literal notranslate"><span class="pre">pkexec</span></code> komutunu çalıştırın:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY xterm
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Parola soruluyorsa ve yetkilendirme başarılı oluyorsa ayarlarınız tamamdır.</p></li>
+</ol>
+</section>
+<section id="ozet">
+<h2><strong>6 — Özet</strong><a class="headerlink" href="#ozet" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pkexec</span></code> → Polkit kullanarak yetkilendirme yapar.</p></li>
+<li><p>Polkit → PAM üzerinden kimlik doğrular.</p></li>
+<li><p>PAM → Kullanıcı kabuğunun <code class="docutils literal notranslate"><span class="pre">/etc/shells</span></code> içinde olmasını bekler.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/etc/shells</span></code> → Geçerli kabuğunuz burada yoksa <code class="docutils literal notranslate"><span class="pre">pkexec</span></code> başarısız olur.</p></li>
+<li><p>Polkit kuralları ile hangi kullanıcı/grupların yetki alacağı belirlenir.</p></li>
+</ul>
+<p><strong>Kaynaklar</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- Polkit Dokümantasyonu: https://www.freedesktop.org/software/polkit/docs/latest/
+- Arch Wiki — Polkit: https://wiki.archlinux.org/title/Polkit
+- Arch Wiki — Sudo: https://wiki.archlinux.org/title/Sudo
+- PAM /etc/shells: https://linux.die.net/man/5/shells
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Gezinti</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/2-yazar.html"><strong>Yazar</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/2-yazar.html#paket-derleme"><strong>Paket Derleme</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/2-yazar.html#iletisim"><strong>İletişim</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/3-onsoz.html">Ön Söz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/4-icindekiler.html">İçindekiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01.giris/index.html"><strong>Temel Kavramlar</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.sistemin-hazirlanmas%C4%B1/index.html"><strong>X Pencere Sistemin Hazırlanması</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.paket-derleme/index.html"><strong>GNU Araçlarıyla Pencere Yöneticisi Derleme</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.iso-hazirlama/index.html"><strong>ISO Hazırlama</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12.sistemin-calistirma-inceleme/index.html">Oluşan Sistemin Çalıştırılması ve İncelenmesi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../14.lxde-calistirma/index.html"><strong>Lxde Masaüstü Ortamı Çalıştırma</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Yardımcı Konular</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="08-kly-paket-sistemi-kullan%C4%B1m%C4%B1/index.html"><strong>kly Paket Sistemi Kullanımı</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="019-apt.html"><strong>apt Paket Sistemi</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="100-virtualbox.html"><strong>VirtualBox</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="102-derleme-t%C3%BCrleri.html"><strong>Kaynak Kod Derleme</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="103-0.derleme-ara%C3%A7lar%C4%B1.html"><strong>Derleme Araçları</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="103-1.make.html"><strong>1-make</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="103-2.cmake.html"><strong>2-cmake</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="103-3.meson.html"><strong>3-meson</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="103-4.python.html"><strong>4-python</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="109-openrc.html"><strong>OpenRC</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="110-qemu.html"><strong>Qemu Kullanımı</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="139-github.html"><strong>github</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="139-github.html#sik-kullanilan-github-komutlari"><strong>Sık Kullanılan github Komutları</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="140-elogind.html"><strong>elogind Yapılandırması</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="141-dbus.html"><strong>D-Bus Yapılandırması</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="142-polkit.html"><strong>polkit Yetkilendirme</strong></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><strong>pkexec, /etc/shells ve Polkit İlişkisi</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#temel-iliski"><strong>1 — Temel İlişki</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#etc-shells-dosyasini-kontrol-etme"><strong>2 — /etc/shells Dosyasını Kontrol Etme</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#polkit-ile-baglanti"><strong>3 — Polkit ile Bağlantı</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wheel-grubunu-yonetici-olarak-tanimlama"><strong>4 — Wheel Grubunu Yönetici Olarak Tanımlama</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test"><strong>5 — Test</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ozet"><strong>6 — Özet</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="144-glib-compile-schemas-.html"><strong>glib-compile-schemas Kullanımı</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="145-gdk-pixbuf-query-loaders.html"><strong>gdk-pixbuf-query-loaders Kullanımı</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="150-userdirs.html"><strong>user-dirs</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="151-sistemdili.html"><strong>Sistem Dili Değiştirme</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="152-kullaniciekleme.html"><strong>Kullanıcı Ekleme</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="153-cgroup.html"><strong>cgroup</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2-kaynak.html"><strong>Kaynaklar</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3-contact-sonkapak.html"><strong>Geliştiricilere Mesajımız</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-lisans.html"><strong>Lisans Bilgileri</strong></a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;distro 2023.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/15.yardimci-konular/143-pkexec.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

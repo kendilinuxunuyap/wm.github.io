@@ -1,0 +1,43 @@
+.. _lz4:
+
+**lz4**
+=======
+
+Sıkıştırma algoritması ve kütüphanesidir.
+
+**Paketi Derleme :**
+--------------------
+
+.. code-block:: bash
+
+	#!/usr/bin/env bash
+	name="lz4"
+	version="1.9.4"
+	description="Extremely fast compression algorithm"
+	source="https://github.com/lz4/lz4/archive/refs/tags/v1.9.4.tar.gz"
+	depends=""
+	builddepend=""
+	group="app.arch"
+
+	setup(){
+		echo ""
+	}
+
+	build(){
+		cd $SOURCEDIR
+		make PREFIX=/usr
+	}
+
+	package(){
+		make install DESTDIR=$DESTDIR PREFIX=/usr
+		mv ${DESTDIR}/usr/{lib,lib64}
+	}
+
+
+**Not:** Burada verilen derleme talimatı(script) **kly Paket Sistemi**'ni kullanarak paketi derler ve oluştur. Oluşan paket(**.kly uzantılı dosya**)  **kly Paket Sistemi** kullanılarak siteme yüklenebilir. **kly Paket Sistemiyle Paket Yapma** konusunu okumak için `tıklayınız. <#klypaketyap>`_
+
+
+ 
+.. raw:: pdf
+
+   PageBreak

@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>polkit Yetkilendirme &#8212; distro Wiki  belgelendirmesi</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="canonical" href="https://kendilinuxunuyap.github.io/15.yardimci-konular/142-polkit.html" />
+    <link rel="index" title="Dizin" href="../genindex.html" />
+    <link rel="search" title="Ara" href="../search.html" />
+    <link rel="next" title="pkexec, /etc/shells ve Polkit İlişkisi" href="143-pkexec.html" />
+    <link rel="prev" title="D-Bus Yapılandırması" href="141-dbus.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="polkit-yetkilendirme">
+<h1><strong>polkit Yetkilendirme</strong><a class="headerlink" href="#polkit-yetkilendirme" title="Permalink to this heading">¶</a></h1>
+<p>Bu kılavuz, lxsession-logout penceresinde &quot;Kapat&quot; ve &quot;Yeniden Başlat&quot;
+işlemlerinin parola doğrulaması açılmasına rağmen başarısız olması sorununu
+çözer. Amaç: <em>wheel</em> grubundaki kullanıcıların GUI'den <strong>poweroff/reboot</strong>
+yapabilmesini sağlamak.</p>
+<section id="temel-ayar-kontrolu">
+<h2><strong>Temel Ayar Kontrolü</strong><a class="headerlink" href="#temel-ayar-kontrolu" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Elogind çalışıyor mu?</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rc-status<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;elogind|dbus&#39;</span>
+rc-service<span class="w"> </span>elogind<span class="w"> </span>status
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Polkit aracı (agent) çalışıyor mu?</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pgrep<span class="w"> </span>-fa<span class="w"> </span>lxpolkit<span class="w"> </span><span class="o">||</span><span class="w"> </span>pgrep<span class="w"> </span>-fa<span class="w"> </span>polkit-gnome-authentication-agent-1
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Kullanıcı gerçekten <em>wheel</em> grubunda mı?</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>id<span class="w"> </span><span class="nv">$USER</span>
+</pre></div>
+</div>
+</section>
+<section id="cozum-1-wheel-grubunu-yonetici-olarak-tanimlama">
+<h2><strong>Çözüm 1 — *wheel* Grubunu “Yönetici” Olarak Tanımlama</strong><a class="headerlink" href="#cozum-1-wheel-grubunu-yonetici-olarak-tanimlama" title="Permalink to this heading">¶</a></h2>
+<p>Polkit’e <em>wheel</em> grubunun “yönetici kimliği (AdminIdentity)” olduğunu söyleyin.
+Bu, yönetici doğrulaması gerektiren işlemlerde <em>wheel</em> üyesinin <strong>kendi parolasıyla</strong>
+yetki almasını sağlar.</p>
+<ol class="arabic simple">
+<li><p>Dosyayı oluşturun: <code class="docutils literal notranslate"><span class="pre">/etc/polkit-1/rules.d/40-wheel-admin.rules</span></code></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/*<span class="w"> </span>Mark<span class="w"> </span>wheel<span class="w"> </span>group<span class="w"> </span>as<span class="w"> </span>administrators<span class="w"> </span><span class="o">(</span>use<span class="w"> </span>own<span class="w"> </span>password<span class="o">)</span><span class="w"> </span>*/
+polkit.addAdminRule<span class="o">(</span><span class="k">function</span><span class="o">(</span>action,<span class="w"> </span>subject<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>subject.isInGroup<span class="o">(</span><span class="s2">&quot;wheel&quot;</span><span class="o">))</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;unix-group:wheel&quot;</span><span class="o">]</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">})</span><span class="p">;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Dosya izinleri:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chown<span class="w"> </span>root:root<span class="w"> </span>/etc/polkit-1/rules.d/40-wheel-admin.rules
+chmod<span class="w"> </span><span class="m">0644</span><span class="w"> </span>/etc/polkit-1/rules.d/40-wheel-admin.rules
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Tekrar oturum açın ve <code class="docutils literal notranslate"><span class="pre">lxsession-logout</span></code> üzerinden deneyin.</p></li>
+</ol>
+</section>
+<section id="cozum-2-sadece-guc-eylemlerine-wheel-icin-yes-ver">
+<h2><strong>Çözüm 2 — Sadece Güç Eylemlerine *wheel* için “YES” Ver</strong><a class="headerlink" href="#cozum-2-sadece-guc-eylemlerine-wheel-icin-yes-ver" title="Permalink to this heading">¶</a></h2>
+<p>Sistemde “admin” kavramını genişletmek istemiyorsanız, yalnızca poweroff/reboot
+eylemlerine <em>wheel</em> için açıkça izin verin.</p>
+<ol class="arabic simple">
+<li><p>Dosyayı oluşturun: <code class="docutils literal notranslate"><span class="pre">/etc/polkit-1/rules.d/49-login1-power-wheel.rules</span></code></p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/*<span class="w"> </span>Allow<span class="w"> </span>wheel<span class="w"> </span>to<span class="w"> </span>poweroff/reboot<span class="w"> </span><span class="o">(</span>elogind<span class="w"> </span>login1<span class="w"> </span>actions<span class="o">)</span><span class="w"> </span>*/
+polkit.addRule<span class="o">(</span><span class="k">function</span><span class="o">(</span>action,<span class="w"> </span>subject<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>!subject.isInGroup<span class="o">(</span><span class="s2">&quot;wheel&quot;</span><span class="o">))</span>
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">    </span>var<span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>action.id<span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">(</span><span class="nv">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;org.freedesktop.login1.power-off&quot;</span><span class="w"> </span><span class="o">||</span>
+<span class="w">        </span><span class="nv">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;org.freedesktop.login1.power-off-multiple-sessions&quot;</span><span class="w"> </span><span class="o">||</span>
+<span class="w">        </span><span class="nv">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;org.freedesktop.login1.reboot&quot;</span><span class="w"> </span><span class="o">||</span>
+<span class="w">        </span><span class="nv">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;org.freedesktop.login1.reboot-multiple-sessions&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>polkit.Result.YES<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">})</span><span class="p">;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>İzinler:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chown<span class="w"> </span>root:root<span class="w"> </span>/etc/polkit-1/rules.d/49-login1-power-wheel.rules
+chmod<span class="w"> </span><span class="m">0644</span><span class="w"> </span>/etc/polkit-1/rules.d/49-login1-power-wheel.rules
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Tekrar oturum açın ve <code class="docutils literal notranslate"><span class="pre">lxsession-logout</span></code> üzerinden deneyin.</p></li>
+</ol>
+</section>
+<section id="onemli-not">
+<h2><strong>Önemli Not:</strong><a class="headerlink" href="#onemli-not" title="Permalink to this heading">¶</a></h2>
+<p>Sisteminizde polkit kullanıyorsanız ve masaüstü ortamı <strong>LXDE</strong> ise <strong>lxpolkit</strong> devre dışı bırakılmalıdır. Kaldırma işlemini <strong>lxsession</strong> otomatik başlatma seçeneklerinden <strong>lxpolkit</strong> kaldırılarak yapılır. Kaldırılmaması durumunda birden fazla yetkilendirme çalışıyor uyarısı alırız.</p>
+<p><strong>Kaynaklar</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- OpenRC Resmi Belgeler:        https://wiki.gentoo.org/wiki/OpenRC
+- Polkit Resmi Dokümantasyon:   https://www.freedesktop.org/software/polkit/docs/latest/
+- Arch Wiki — Polkit:   https://wiki.archlinux.org/title/Polkit
+- Arch Wiki — Elogind:  https://wiki.archlinux.org/title/Elogind
+- LXDE Resmi Wiki:      https://wiki.lxde.org/en/Main_Page
+- Debian Wiki — Polkit: https://wiki.debian.org/PolicyKit
+- Polkit kural örnekleri (wheel group): https://wiki.archlinux.org/title/Polkit#Bypass_password_prompt
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Gezinti</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/2-yazar.html"><strong>Yazar</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/2-yazar.html#paket-derleme"><strong>Paket Derleme</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/2-yazar.html#iletisim"><strong>İletişim</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/3-onsoz.html">Ön Söz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/4-icindekiler.html">İçindekiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01.giris/index.html"><strong>Temel Kavramlar</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.sistemin-hazirlanmas%C4%B1/index.html"><strong>X Pencere Sistemin Hazırlanması</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.paket-derleme/index.html"><strong>GNU Araçlarıyla Pencere Yöneticisi Derleme</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.iso-hazirlama/index.html"><strong>ISO Hazırlama</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12.sistemin-calistirma-inceleme/index.html">Oluşan Sistemin Çalıştırılması ve İncelenmesi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../14.lxde-calistirma/index.html"><strong>Lxde Masaüstü Ortamı Çalıştırma</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Yardımcı Konular</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="08-kly-paket-sistemi-kullan%C4%B1m%C4%B1/index.html"><strong>kly Paket Sistemi Kullanımı</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="019-apt.html"><strong>apt Paket Sistemi</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="100-virtualbox.html"><strong>VirtualBox</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="102-derleme-t%C3%BCrleri.html"><strong>Kaynak Kod Derleme</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="103-0.derleme-ara%C3%A7lar%C4%B1.html"><strong>Derleme Araçları</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="103-1.make.html"><strong>1-make</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="103-2.cmake.html"><strong>2-cmake</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="103-3.meson.html"><strong>3-meson</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="103-4.python.html"><strong>4-python</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="109-openrc.html"><strong>OpenRC</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="110-qemu.html"><strong>Qemu Kullanımı</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="139-github.html"><strong>github</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="139-github.html#sik-kullanilan-github-komutlari"><strong>Sık Kullanılan github Komutları</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="140-elogind.html"><strong>elogind Yapılandırması</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="141-dbus.html"><strong>D-Bus Yapılandırması</strong></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><strong>polkit Yetkilendirme</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#temel-ayar-kontrolu"><strong>Temel Ayar Kontrolü</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cozum-1-wheel-grubunu-yonetici-olarak-tanimlama"><strong>Çözüm 1 — *wheel* Grubunu “Yönetici” Olarak Tanımlama</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cozum-2-sadece-guc-eylemlerine-wheel-icin-yes-ver"><strong>Çözüm 2 — Sadece Güç Eylemlerine *wheel* için “YES” Ver</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#onemli-not"><strong>Önemli Not:</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="143-pkexec.html"><strong>pkexec, /etc/shells ve Polkit İlişkisi</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="144-glib-compile-schemas-.html"><strong>glib-compile-schemas Kullanımı</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="145-gdk-pixbuf-query-loaders.html"><strong>gdk-pixbuf-query-loaders Kullanımı</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="150-userdirs.html"><strong>user-dirs</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="151-sistemdili.html"><strong>Sistem Dili Değiştirme</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="152-kullaniciekleme.html"><strong>Kullanıcı Ekleme</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="153-cgroup.html"><strong>cgroup</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2-kaynak.html"><strong>Kaynaklar</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3-contact-sonkapak.html"><strong>Geliştiricilere Mesajımız</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-lisans.html"><strong>Lisans Bilgileri</strong></a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;distro 2023.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/15.yardimci-konular/142-polkit.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

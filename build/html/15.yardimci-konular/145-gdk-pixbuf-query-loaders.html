@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>gdk-pixbuf-query-loaders Kullanımı &#8212; distro Wiki  belgelendirmesi</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="canonical" href="https://kendilinuxunuyap.github.io/15.yardimci-konular/145-gdk-pixbuf-query-loaders.html" />
+    <link rel="index" title="Dizin" href="../genindex.html" />
+    <link rel="search" title="Ara" href="../search.html" />
+    <link rel="next" title="user-dirs" href="150-userdirs.html" />
+    <link rel="prev" title="glib-compile-schemas Kullanımı" href="144-glib-compile-schemas-.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="gdk-pixbuf-query-loaders-kullanimi">
+<h1><strong>gdk-pixbuf-query-loaders Kullanımı</strong><a class="headerlink" href="#gdk-pixbuf-query-loaders-kullanimi" title="Permalink to this heading">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">gdk-pixbuf-query-loaders</span></code> komutu, <code class="docutils literal notranslate"><span class="pre">gdk-pixbuf</span></code> kütüphanesinin kullanabileceği tüm resim yükleyicilerini (image loaders) tarar ve bunların bilgilerini derleyerek bir yapılandırma dosyası (<code class="docutils literal notranslate"><span class="pre">loaders.cache</span></code>) oluşturur.</p>
+<p>Bu komut, özellikle GNOME ve GTK tabanlı uygulamaların farklı resim formatlarını (PNG, JPEG, SVG, GIF vb.) tanıyabilmesi için gereklidir.</p>
+<section id="temel-gorev">
+<h2><strong>Temel Görev</strong><a class="headerlink" href="#temel-gorev" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Sistem üzerinde kurulu <strong>gdk-pixbuf loader modüllerini</strong> bulur.</p></li>
+<li><p>Bu modüllerin yeteneklerini (desteklenen dosya türleri, MIME tipleri vb.) listeler.</p></li>
+<li><p>Bilgileri ikili önbellek dosyası olan <code class="docutils literal notranslate"><span class="pre">loaders.cache</span></code> içine yazar.</p></li>
+<li><p>Böylece uygulamalar, her çalıştırıldığında modül taraması yapmak yerine
+bu önbellekten hızlıca bilgi alır.</p></li>
+</ul>
+</section>
+<section id="ne-zaman-kullanilir">
+<h2><strong>Ne Zaman Kullanılır?</strong><a class="headerlink" href="#ne-zaman-kullanilir" title="Permalink to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Yeni image loader eklendiğinde:</strong> Örneğin, SVG desteği için <code class="docutils literal notranslate"><span class="pre">librsvg</span></code> kurulduğunda veya başka bir formatı destekleyen eklenti eklendiğinde.</p></li>
+<li><p><strong>gdk-pixbuf güncellendiğinde:</strong> Kütüphane sürümü değiştiğinde, modül yolları değişebileceği için <code class="docutils literal notranslate"><span class="pre">loaders.cache</span></code> dosyasının yeniden oluşturulması gerekir.</p></li>
+<li><p><strong>Sistem imajı hazırlanırken:</strong> Özel bir Linux dağıtımı yapılırken, kök dosya sisteminde tüm loader'ların kayıtlı olduğundan emin olmak için.</p></li>
+<li><p><strong>Elle modül kurulumu yapıldığında:</strong> Paket yöneticisi dışında manuel olarak bir loader modülü kopyalandığında veya derlendiğinde.</p></li>
+</ol>
+</section>
+<section id="kullanim-sekli">
+<h2><strong>Kullanım Şekli</strong><a class="headerlink" href="#kullanim-sekli" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>gdk-pixbuf-query-loaders<span class="w"> </span>--update-cache
+</pre></div>
+</div>
+<p><strong>Açıklama</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- ``--update-cache`` Otomatik olarak tüm loader&#39;ları tarar ve sonuçları ``loaders.cache`` dosyasına yazar.
+- Varsayılan cache dosyası konumu: ``/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders.cache`` (Konum, mimari ve dağıtıma göre değişebilir.)
+- ``gdk-pixbuf-query-loaders`` komutu **stdout** çıktısı verir; eğer ``--update-cache`` kullanılmazsa bu çıktı elle bir dosyaya yönlendirilmelidir:
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdk-pixbuf-query-loaders<span class="w"> </span>&gt;<span class="w"> </span>/usr/lib/.../loaders.cache
+</pre></div>
+</div>
+</section>
+<section id="dikkat-edilmesi-gerekenler">
+<h2><strong>Dikkat Edilmesi Gerekenler</strong><a class="headerlink" href="#dikkat-edilmesi-gerekenler" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Komutun, cache dosyasının bulunduğu dizine yazma izni olan kullanıcı (genellikle <code class="docutils literal notranslate"><span class="pre">root</span></code>) tarafından çalıştırılması gerekir.</p></li>
+<li><p>Modüller doğru yüklenmiyorsa veya bazı formatlar açılamıyorsa, cache dosyasının güncel olduğundan emin olun.</p></li>
+<li><p>Yanlış mimarideki (32-bit/64-bit) loader modülleri eklenirse hatalar oluşabilir.</p></li>
+</ul>
+<p><strong>Kaynaklar</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">GDK</span><span class="o">-</span><span class="n">Pixbuf</span> <span class="n">Belgeleri</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">developer</span><span class="o">.</span><span class="n">gnome</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">gdk</span><span class="o">-</span><span class="n">pixbuf</span><span class="o">/</span><span class="n">stable</span><span class="o">/</span>
+<span class="o">-</span> <span class="n">gdk</span><span class="o">-</span><span class="n">pixbuf</span><span class="o">-</span><span class="n">query</span><span class="o">-</span><span class="n">loaders</span> <span class="n">kılavuz</span> <span class="n">sayfası</span><span class="p">:</span>     <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">manpages</span><span class="o">.</span><span class="n">debian</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">gdk</span><span class="o">-</span><span class="n">pixbuf</span><span class="o">-</span><span class="n">query</span><span class="o">-</span><span class="n">loaders</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Gezinti</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/2-yazar.html"><strong>Yazar</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/2-yazar.html#paket-derleme"><strong>Paket Derleme</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/2-yazar.html#iletisim"><strong>İletişim</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/3-onsoz.html">Ön Söz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/4-icindekiler.html">İçindekiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01.giris/index.html"><strong>Temel Kavramlar</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02.sistemin-hazirlanmas%C4%B1/index.html"><strong>X Pencere Sistemin Hazırlanması</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.paket-derleme/index.html"><strong>GNU Araçlarıyla Pencere Yöneticisi Derleme</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.iso-hazirlama/index.html"><strong>ISO Hazırlama</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12.sistemin-calistirma-inceleme/index.html">Oluşan Sistemin Çalıştırılması ve İncelenmesi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../14.lxde-calistirma/index.html"><strong>Lxde Masaüstü Ortamı Çalıştırma</strong></a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Yardımcı Konular</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="08-kly-paket-sistemi-kullan%C4%B1m%C4%B1/index.html"><strong>kly Paket Sistemi Kullanımı</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="019-apt.html"><strong>apt Paket Sistemi</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="100-virtualbox.html"><strong>VirtualBox</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="102-derleme-t%C3%BCrleri.html"><strong>Kaynak Kod Derleme</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="103-0.derleme-ara%C3%A7lar%C4%B1.html"><strong>Derleme Araçları</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="103-1.make.html"><strong>1-make</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="103-2.cmake.html"><strong>2-cmake</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="103-3.meson.html"><strong>3-meson</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="103-4.python.html"><strong>4-python</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="109-openrc.html"><strong>OpenRC</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="110-qemu.html"><strong>Qemu Kullanımı</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="139-github.html"><strong>github</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="139-github.html#sik-kullanilan-github-komutlari"><strong>Sık Kullanılan github Komutları</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="140-elogind.html"><strong>elogind Yapılandırması</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="141-dbus.html"><strong>D-Bus Yapılandırması</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="142-polkit.html"><strong>polkit Yetkilendirme</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="143-pkexec.html"><strong>pkexec, /etc/shells ve Polkit İlişkisi</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="144-glib-compile-schemas-.html"><strong>glib-compile-schemas Kullanımı</strong></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><strong>gdk-pixbuf-query-loaders Kullanımı</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#temel-gorev"><strong>Temel Görev</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ne-zaman-kullanilir"><strong>Ne Zaman Kullanılır?</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kullanim-sekli"><strong>Kullanım Şekli</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dikkat-edilmesi-gerekenler"><strong>Dikkat Edilmesi Gerekenler</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="150-userdirs.html"><strong>user-dirs</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="151-sistemdili.html"><strong>Sistem Dili Değiştirme</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="152-kullaniciekleme.html"><strong>Kullanıcı Ekleme</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="153-cgroup.html"><strong>cgroup</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2-kaynak.html"><strong>Kaynaklar</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3-contact-sonkapak.html"><strong>Geliştiricilere Mesajımız</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-lisans.html"><strong>Lisans Bilgileri</strong></a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;distro 2023.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/15.yardimci-konular/145-gdk-pixbuf-query-loaders.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,46 @@
+.. _lxhotkey:
+
+**lxhotkey**
+============
+
+Klavye kısayollarının yönetimi için kullanılır.
+
+
+**Paketi Derleme :**
+--------------------
+
+.. code-block:: bash
+
+	#!/usr/bin/env bash
+	name="lxhotkey"
+	version="0.1.1"
+	description="LXDE hotkey"
+	source="https://github.com/lxde/lxhotkey/archive/refs/tags/$version.tar.gz"
+	depends="libfm"
+	builddepend="libexif"
+	group="lxde.base"
+
+
+	setup(){
+		cd $SOURCEDIR
+		autoreconf -fvi
+		./configure --prefix=/usr \
+		    --libdir=/usr/lib64/ \
+		    --with-gtk=3
+	}
+
+	build(){
+		make
+	}
+
+	package(){
+		make install DESTDIR=$DESTDIR
+	}
+
+**Not:** Burada verilen derleme talimatı(script) **kly Paket Sistemi**'ni kullanarak paketi derler ve oluştur. Oluşan paket(**.kly uzantılı dosya**)  **kly Paket Sistemi** kullanılarak siteme yüklenebilir. **kly Paket Sistemiyle Paket Yapma** konusunu okumak için `tıklayınız. <#klypaketyap>`_
+
+
+	 
+.. raw:: pdf
+
+   PageBreak

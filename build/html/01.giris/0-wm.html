@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Window Manager (Pencere Yöneticisi) &#8212; distro Wiki  belgelendirmesi</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="canonical" href="https://kendilinuxunuyap.github.io/01.giris/0-wm.html" />
+    <link rel="index" title="Dizin" href="../genindex.html" />
+    <link rel="search" title="Ara" href="../search.html" />
+    <link rel="next" title="X Pencere Sistemin Hazırlanması" href="../02.sistemin-hazirlanmas%C4%B1/index.html" />
+    <link rel="prev" title="Temel Kavramlar" href="index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="window-manager-pencere-yoneticisi">
+<h1><strong>Window Manager (Pencere Yöneticisi)</strong><a class="headerlink" href="#window-manager-pencere-yoneticisi" title="Permalink to this heading">¶</a></h1>
+<p>Xorg yalnızca pencereyi oluşturur. Pencereyi taşıma, kapatma, büyütme ve küçültme işlemlerini yapar. Basit ortam sunan pencere yöneticileri( Openbox, i3).</p>
+<p>Xorg + Openbox =&gt; Grafik ortamda çalışan bir sistem oluşturur.</p>
+<p>Openbox kendi başına bir masaüstü ortamı değil ancak başka bileşenlerle basit bir masaüstü ortamı gibi çalışabilir.</p>
+</section>
+<section id="display-manager-giris-ekrani-oturum-baslatici">
+<h1><strong>Display Manager (Giriş Ekranı + Oturum Başlatıcı)</strong><a class="headerlink" href="#display-manager-giris-ekrani-oturum-baslatici" title="Permalink to this heading">¶</a></h1>
+<p>Sistem açıldığında kullanıcı seçimi ve parola ekranı sunar. Girişten sonra kullanıcı oturumunu (masaüstü yöneticisini) başlatır.</p>
+<p>Tercih edilen giriş ekranı yöneticileri(gdm, lightdm, lxdm). X Pencere Sistemi için zorunlu değildir.</p>
+</section>
+<section id="desktop-manager-masaustu-yoneticisi">
+<h1><strong>Desktop Manager (Masaüstü Yöneticisi)</strong><a class="headerlink" href="#desktop-manager-masaustu-yoneticisi" title="Permalink to this heading">¶</a></h1>
+<p>Masaüstü ortamını sağlayan uygulamalar bütünüdür. Dosya yöneticisi, pencere yöneticisi, ayarlar ve panel gibi bileşenleri içerir.</p>
+<p><strong>Tercih edilen masaüstü yöneticisi;</strong></p>
+<ol class="arabic">
+<li><p><strong>LXDE (Lightweight X11 Desktop Environment)</strong></p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">LXDE</span></code>, GTK tabanlı az kaynak kullanan bir masaüstü ortamıdır. Pencere yöneticisi <code class="docutils literal notranslate"><span class="pre">Openbox</span></code> dır.</p>
+</div></blockquote>
+</li>
+<li><p><strong>XFCE</strong></p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">XFCE</span></code>, GTK tabanlı hafif ve kullanımı kolay bir masaüstü ortamıdır.</p>
+</div></blockquote>
+</li>
+<li><p><strong>KDE Plasma</strong></p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">KDE</span></code>, Qt tabanlı tabanlı gelişmiş bir masaüstü ortamıdır.</p>
+</div></blockquote>
+</li>
+<li><p><strong>GNOME</strong></p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">GNOME</span></code>, modern bir masaüstü ortamıdır. Dokunmatik ekranlı cihazları desteklenmektedir.</p>
+</div></blockquote>
+</li>
+<li><p><strong>Cinnamon</strong></p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">Cinnamon</span></code>, GTK tabanlı ek bileşenleri python ile yapılmış modern masaüstü ortamdır. <code class="docutils literal notranslate"><span class="pre">Linux</span> <span class="pre">Mint</span></code> tarafından geliştirilmektedir. GNOME 3'ün bir çatallanmasıdır.</p>
+</div></blockquote>
+</li>
+</ol>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Gezinti</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/2-yazar.html"><strong>Yazar</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/2-yazar.html#paket-derleme"><strong>Paket Derleme</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/2-yazar.html#iletisim"><strong>İletişim</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/3-onsoz.html">Ön Söz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00.kapak/4-icindekiler.html">İçindekiler</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html"><strong>Temel Kavramlar</strong></a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><strong>Window Manager (Pencere Yöneticisi)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#display-manager-giris-ekrani-oturum-baslatici"><strong>Display Manager (Giriş Ekranı + Oturum Başlatıcı)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desktop-manager-masaustu-yoneticisi"><strong>Desktop Manager (Masaüstü Yöneticisi)</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../02.sistemin-hazirlanmas%C4%B1/index.html"><strong>X Pencere Sistemin Hazırlanması</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09.paket-derleme/index.html"><strong>GNU Araçlarıyla Pencere Yöneticisi Derleme</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10.iso-hazirlama/index.html"><strong>ISO Hazırlama</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12.sistemin-calistirma-inceleme/index.html">Oluşan Sistemin Çalıştırılması ve İncelenmesi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../14.lxde-calistirma/index.html"><strong>Lxde Masaüstü Ortamı Çalıştırma</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15.yardimci-konular/index.html">Yardımcı Konular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2-kaynak.html"><strong>Kaynaklar</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3-contact-sonkapak.html"><strong>Geliştiricilere Mesajımız</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../4-lisans.html"><strong>Lisans Bilgileri</strong></a></li>
+</ul>
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;distro 2023.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/01.giris/0-wm.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

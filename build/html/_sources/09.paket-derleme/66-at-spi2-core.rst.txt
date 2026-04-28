@@ -1,0 +1,45 @@
+.. _at-spi2-core:
+
+**at-spi2-core**
+================
+
+Erişilebilirlik araçları ve yazılımları arasında iletişimi sağlar.
+
+
+**Paketi Derleme :**
+--------------------
+
+.. code-block:: bash
+
+	#!/usr/bin/env bash
+	name="at-spi2-core"
+
+	version="2.50.1"
+	url="https://gitlab.gnome.org/GNOME/at-spi2-core"
+	description="GTK+ & GNOME Accessibility Toolkit"
+
+	source="https://gitlab.gnome.org/GNOME/at-spi2-core/-/archive/AT_SPI2_CORE_${version//./_}/at-spi2-core-AT_SPI2_CORE_${version//./_}.tar.gz"
+	depends="glib,libffi,libpcre2,libXtst"
+
+	setup(){
+	cd $SOURCEDIR
+		meson setup $BUILDDIR --prefix=/usr \
+		    --libdir=/usr/lib64/ 
+
+	}
+
+	build(){
+		ninja -C $BUILDDIR
+	}
+
+	package(){
+	   DESTDIR=$DESTDIR ninja -C $BUILDDIR install
+	}
+
+
+**Not:** Burada verilen derleme talimatı(script) **kly Paket Sistemi**'ni kullanarak paketi derler ve oluştur. Oluşan paket(**.kly uzantılı dosya**)  **kly Paket Sistemi** kullanılarak siteme yüklenebilir. **kly Paket Sistemiyle Paket Yapma** konusunu okumak için `tıklayınız. <#klypaketyap>`_
+
+
+.. raw:: pdf
+
+   PageBreak
